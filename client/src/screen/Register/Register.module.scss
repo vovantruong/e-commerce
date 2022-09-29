@@ -1,0 +1,13 @@
+@import '../Login/Login.module.scss';
+
+.register{
+    position: relative;
+	overflow: hidden;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.wrapper__intro {
+	background: url('../../assets/bg-image-register.jpg') no-repeat;
+    background-position: center;
+	background-size: cover;
+}
