@@ -88,7 +88,8 @@
     position: relative;
     width: 100%;
     text-align: center;
-    @include button-style($padding: 10px 35px)
+	padding: 10px 35px;
+    @include button-style()
 }
 
 .register-foot{

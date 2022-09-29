@@ -45,7 +45,7 @@ const Header = () => {
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
-			if (window.pageYOffset > 150) {
+			if (window.pageYOffset > 125) {
 				setScroll(true)
 			} else {
 				setScroll(false)

@@ -1,8 +1,7 @@
-@mixin button-style($background: #3577f0, $color: #fff, $padding: 16px 38px, $borderRadius: 6px) {
+@mixin button-style($background: #3577f0, $color: #fff, $borderRadius: 6px) {
 	background: $background;
 	color: $color;
 	display: inline-block;
-	padding: $padding;
 	border-radius: $borderRadius;
 	transition: all 0.3s ease-in-out;
 	z-index: 1;

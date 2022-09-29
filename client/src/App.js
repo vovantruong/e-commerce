@@ -1,5 +1,6 @@
 import { Fragment, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import { adminRoutes, customerRoutes } from './routes/routes'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
 					})}
 				</Routes>
 			</div>
+			<ScrollToTop />
 		</BrowserRouter>
 	)
 }

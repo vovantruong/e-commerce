@@ -8,14 +8,12 @@ import './styles/app.scss'
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
-import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 	<React.StrictMode>
 		<MediaQueryProvider>
 			<App />
-			<ScrollToTop />
 		</MediaQueryProvider>
 	</React.StrictMode>
 )
