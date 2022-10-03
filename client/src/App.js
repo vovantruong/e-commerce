@@ -6,7 +6,7 @@ import { adminRoutes, customerRoutes } from './routes/routes'
 function App() {
 
 	useEffect(() => {
-		document.title = "Tshop | Online Solution"
+		document.title = "Tshop - Online Solution"
 	},[])
 
 	return (

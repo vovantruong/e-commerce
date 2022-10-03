@@ -4,10 +4,15 @@
     position: relative;
 	overflow: hidden;
 	font-family: 'DM Sans', sans-serif;
+	.submit-btn{
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 .wrapper__intro {
 	background: url('../../assets/bg-image-register.jpg') no-repeat;
     background-position: center;
 	background-size: cover;
+
 }

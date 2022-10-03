@@ -14,6 +14,7 @@ import SearchBox from '~/components/SearchBox/SearchBox'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper'
 import UserAccount from './UserAccount/UserAccount'
+import Sidebar from './Sidebar/Sidebar'
 
 const cx = classNames.bind(styles)
 
@@ -38,6 +39,7 @@ const Header = () => {
 	const [currency, setCurrency] = useState(dataCurrency[0])
 	const [scroll, setScroll] = useState(false)
 	const [visibleSearchBox, setVisibleSearchBox] = useState(false)
+	const [visibleSidebar, setVisibleSidebar] = useState(false)
 
 	const isBreakPoint = useContext(MediaQueryContext)
 
@@ -117,7 +119,10 @@ const Header = () => {
 			<div className={cx('header-campain')}>
 				<div className="container">
 					<div className={cx('wrapper')}>
-						<button className={cx('navigation','previous')} onClick={() => swiperRef.current.swiper.slidePrev()}>
+						<button
+							className={cx('navigation', 'previous')}
+							onClick={() => swiperRef.current.swiper.slidePrev()}
+						>
 							<BsArrowLeft />
 						</button>
 						<Swiper
@@ -142,7 +147,10 @@ const Header = () => {
 								</SwiperSlide>
 							))}
 						</Swiper>
-						<button className={cx('navigation','next')} onClick={() => swiperRef.current.swiper.slideNext()}>
+						<button
+							className={cx('navigation', 'next')}
+							onClick={() => swiperRef.current.swiper.slideNext()}
+						>
 							<BsArrowRight />
 						</button>
 					</div>
@@ -163,11 +171,11 @@ const Header = () => {
 									<img src={require('../../assets/logo-text.png')} alt="tshop" />
 								</Link>
 							</div>
-							{!isBreakPoint.isTablet && !isBreakPoint.isMobile && renderNavbarNav()}
+							{!isBreakPoint.tablet && renderNavbarNav()}
 							<div className={cx('navbar__action')}>
 								<ul className={cx('action-list')}>
 									<li className={cx('action-search')} onClick={() => setVisibleSearchBox(true)}>
-										{isBreakPoint.isDesktop ? (
+										{isBreakPoint.desktop ? (
 											<button className={cx('action-toggle')}>
 												<IoSearchOutline />
 											</button>
@@ -196,9 +204,12 @@ const Header = () => {
 									<li className={cx('action-account')}>
 										<UserAccount buttonClassName={cx('action-toggle')} />
 									</li>
-									{(isBreakPoint.isTablet || isBreakPoint.isMobile) && (
+									{isBreakPoint.tablet && (
 										<li className={cx('action-sidebar')}>
-											<button className={cx('action-toggle')}>
+											<button
+												className={cx('action-toggle')}
+												onClick={() => setVisibleSidebar(true)}
+											>
 												<IoIosMenu />
 											</button>
 										</li>
@@ -209,6 +220,7 @@ const Header = () => {
 					</div>
 				</div>
 				{renderHeaderCampaign()}
+				{isBreakPoint.tablet && <Sidebar visible={visibleSidebar} onClose={() => setVisibleSidebar(false)} />}
 			</header>
 			<SearchBox visible={visibleSearchBox} onClose={() => setVisibleSearchBox(false)} />
 		</React.Fragment>

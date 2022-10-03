@@ -39,12 +39,14 @@ const Banner = () => {
 				loop={true}
 				freeMode={true}
 				className={cx('banner-slider')}
+				spaceBetween={30}
 				slidesPerView={1}
 				speed={2000}
 				slideActiveClass={cx('custom-active-slide')}
 				autoplay={{
+                    delay: 5000,
 					disableOnInteraction: false,
-					pauseOnMouseEnter: false,
+					pauseOnMouseEnter: true,
 				}}
 				pagination={{
 					clickable: true,

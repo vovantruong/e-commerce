@@ -13,7 +13,7 @@ const Login = () => {
 	return (
 		<div className={cx('login')}>
 			<div className={cx('wrapper')}>
-				{!isBreakPoint.isMobile && (
+				{!isBreakPoint.mobile && (
 					<div className={cx('wrapper__intro')}>
 						<Link to="/">
 							<img src={Logo} className={cx('logo-img')} alt="..." />
@@ -22,7 +22,7 @@ const Login = () => {
 					</div>
 				)}
 
-				{isBreakPoint.isMobile && (
+				{isBreakPoint.mobile && (
 					<div className={cx('logo-img-mb')}>
 						<Link to="/">
 							<img src={Logo} className={cx('logo-img')} alt="..." />
