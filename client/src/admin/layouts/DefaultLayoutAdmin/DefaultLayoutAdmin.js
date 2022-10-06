@@ -9,9 +9,9 @@ const DefaultLayoutAdmin = ({ children }) => {
 	return (
 		<div className={cx('wrap-screen')}>
 			<ul>
-				<Link to="/admin">Dashboard</Link>
-				<Link to="/admin/login">Login Admin</Link>
-				<Link to="/admin/register">Register Admin</Link>
+				<Link to="/ad/dash">Dashboard</Link>
+				<Link to="/ad/login">Login Admin</Link>
+				<Link to="/ad/register">Register Admin</Link>
 			</ul>
 			{children}
 		</div>

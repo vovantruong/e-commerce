@@ -15,6 +15,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper'
 import UserAccount from './UserAccount/UserAccount'
 import Sidebar from './Sidebar/Sidebar'
+import CartReview from './CartReview/CartReview'
 
 const cx = classNames.bind(styles)
 
@@ -40,6 +41,7 @@ const Header = () => {
 	const [scroll, setScroll] = useState(false)
 	const [visibleSearchBox, setVisibleSearchBox] = useState(false)
 	const [visibleSidebar, setVisibleSidebar] = useState(false)
+	const [visibleCartReview, setVisibleCartReview] = useState(false)
 
 	const isBreakPoint = useContext(MediaQueryContext)
 
@@ -194,12 +196,12 @@ const Header = () => {
 										</Link>
 									</li>
 									<li className={cx('action-cart')}>
-										<Link to="/cart" className={cx('action-toggle')}>
+										<button className={cx('action-toggle')} onClick={() => setVisibleCartReview(true)} >
 											<div className={cx('cart-icon')}>
 												<BsCart2 className={cx('icon')} />
 												<span className={cx('quantity')}>3</span>
 											</div>
-										</Link>
+										</button>
 									</li>
 									<li className={cx('action-account')}>
 										<UserAccount buttonClassName={cx('action-toggle')} />
@@ -219,6 +221,7 @@ const Header = () => {
 						</div>
 					</div>
 				</div>
+				<CartReview visible={visibleCartReview} onClose={() => setVisibleCartReview(false)} />
 				{renderHeaderCampaign()}
 				{isBreakPoint.tablet && <Sidebar visible={visibleSidebar} onClose={() => setVisibleSidebar(false)} />}
 			</header>

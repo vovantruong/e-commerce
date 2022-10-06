@@ -67,7 +67,9 @@ const SearchBox = ({ className, visible, onClose }) => {
 								</h6>
 								<div className={cx('product-price-variant')}>
 									<span className={cx('price', 'current-price')}>${item.product_price}</span>
-									<span className={cx('price', 'old-price')}>${item.product_old_price}</span>
+									{(item.product_old_price && item.product_old_price !== '0') && (
+										<span className={cx('price', 'old-price')}>${item.product_old_price}</span>
+									)}
 								</div>
 								<div className={cx('product-cart')}>
 									<Link to="#" className={cx('cart-btn')}>

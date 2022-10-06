@@ -2,8 +2,13 @@
 
 .register{
     position: relative;
-	overflow: hidden;
+	// overflow: hidden;
 	font-family: 'DM Sans', sans-serif;
+
+	.form-submit{
+		margin: 5% auto;
+	}
+
 	.submit-btn{
 		display: block;
 		margin: 0 auto;

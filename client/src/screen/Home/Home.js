@@ -20,8 +20,8 @@ const Home = () => {
 			<div className="container">
 				<Banner />
 				<Categories />
-				<FLashDeals />
 				<BestSellers />
+				<FLashDeals />
 				<AboutUs />
 				<NewFeature />
 				{renderPosterCountdown()}

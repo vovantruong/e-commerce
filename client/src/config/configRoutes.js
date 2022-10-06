@@ -15,8 +15,8 @@ export const configRoutes = {
     account: '/account',
 
     // ======================== ROUTES ADMIN ============================= //
-    dashboard: "/admin",
-    loginAdmin: "/admin/login",
-    registerAdmin: "/admin/register",
-    forgotAdmin: "/admin/forgotpassword",
+    dashboard: "/ad/dash",
+    loginAdmin: "/ad/login",
+    registerAdmin: "/ad/register",
+    forgotAdmin: "/ad/forgotpassword",
 }

@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Categories.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper'
 import { dataCategories } from '~/constant/dataCategories'
 import { Link } from 'react-router-dom'
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from 'react-icons/hi'
@@ -40,35 +39,31 @@ const Categories = () => {
 					ref={swiperRef}
 					loop={true}
 					freeMode={true}
-					slidesPerView={1}
-					spaceBetween={30}
+					slidesPerView={7}
+					slidesPerGroup={7}
+					spaceBetween={20}
 					speed={1500}
 					breakpoints={{
-						379: {
+						320: {
 							slidesPerView: 1,
 							spaceBetween: 30,
 							slidesPerGroup: 1,
 						},
-						540: {
-							slidesPerView: 2,
-							spaceBetween: 15,
-							slidesPerGroup: 2,
-						},
-						767: {
+						768: {
 							slidesPerView: 4,
+							spaceBetween: 15,
 							slidesPerGroup: 4,
-							spaceBetween: 15,
 						},
-						1023: {
+						1024: {
 							slidesPerView: 5,
+							spaceBetween: 20,
 							slidesPerGroup: 5,
-							spaceBetween: 15,
 						},
-						1280: {
+						1180: {
 							slidesPerView: 7,
+							spaceBetween: 20,
 							slidesPerGroup: 7,
-							spaceBetween: 30,
-						},
+						}
 					}}
 				>
 					{dataCategories.map((item, i) => (

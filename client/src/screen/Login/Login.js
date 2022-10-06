@@ -36,7 +36,7 @@ const Login = () => {
 							Sign Up Now
 						</Link>
 					</div>
-					<form className={cx('signin-form')} autoComplete="off">
+					<form className={cx('form-submit')} autoComplete="off">
 						<h3 className={cx('form-title')}>Sign in to Tshop</h3>
 						<p className={cx('form-desc-title')}>Enter your detail below</p>
 						<div className={cx('form-group')}>
