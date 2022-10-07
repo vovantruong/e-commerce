@@ -50,9 +50,8 @@ const FLashDeals = () => {
 					loop={true}
 					spaceBetween={30}
 					slidesPerView={4}
-					slidesPerGroup={2}
 					freeMode={true}
-					speed={1500}
+					speed={1000}
                     breakpoints={{
                         320: {
                             slidesPerView: 1,
@@ -60,11 +59,10 @@ const FLashDeals = () => {
                         },
                         768: {
                             slidesPerView: 2,
-                            slidesPerGroup: 1,
+                            slidesPerGroup: 2,
                         },
                         1024: {
                             slidesPerView: 4,
-                            slidesPerGroup: 2,
                         }
                     }}
 				>

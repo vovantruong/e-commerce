@@ -28,10 +28,6 @@ const Banner = () => {
 
     const swiperRef = useRef()
 
-    useEffect(() => {
-        console.log(swiperRef.current.swiper);
-    },[Autoplay])
-
 	return (
 		<div className={cx('banner-box-wrap')}>
 			<Swiper

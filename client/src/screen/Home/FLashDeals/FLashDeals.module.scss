@@ -5,7 +5,7 @@
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	margin-bottom: 60px;
+	margin-bottom: 50px;
 
     @include mobile{
         flex-direction: column;
@@ -173,7 +173,7 @@
 	top: 20px;
 	right: 10px;
 	z-index: 2;
-	background-color: var(--color-secondary);
+	background-color: var(--color-primary);
 	line-height: 1;
 	padding: 6px 10px 5px;
 	font-size: 12px;

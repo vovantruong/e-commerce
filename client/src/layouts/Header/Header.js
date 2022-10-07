@@ -118,7 +118,7 @@ const Header = () => {
 
 	function renderHeaderCampaign() {
 		return (
-			<div className={cx('header-campain')}>
+			<div className={cx('header-campain')} >
 				<div className="container">
 					<div className={cx('wrapper')}>
 						<button

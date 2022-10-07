@@ -13,7 +13,6 @@
 
 	@include mobile {
 		display: block;
-		padding: 30px 0;
 	}
 }
 
@@ -34,8 +33,13 @@
 	height: auto;
 
 	@include desktop {
+		width: 170px;
 		padding-bottom: 5%;
-		padding-top: 0;
+		padding-top: 5%;
+	}
+
+	@include tablet {
+		padding-top: 15%;
 	}
 }
 
@@ -53,9 +57,9 @@
 }
 
 .desc-title {
-	padding: 50px 10px;
+	padding: 0 10px 50px 10px;
 	font-size: 32px;
-	font-weight: 500;
+	font-weight: 700;
 	letter-spacing: 1px;
 	@include desktop {
 		padding: 0px 10px;
@@ -64,6 +68,21 @@
 
 .wrapper__login {
 	width: 60%;
+	overflow: auto;
+
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #fff;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #3577f0;
+		border-radius: 10px;
+		cursor: pointer;
+	}
 
 	@include mobile {
 		width: 100%;
@@ -73,7 +92,7 @@
 
 .next-signup {
 	text-align: right;
-	padding: 40px 100px;
+	padding: 40px 100px 0 40px;
 
 	span {
 		font-size: 14px;
@@ -157,8 +176,8 @@
 		background: #fff;
 		padding: 0 10px;
 		color: #777777;
-		
-		@include mobile{
+
+		@include mobile {
 			font-size: 14px;
 			font-weight: 500;
 		}
@@ -166,7 +185,7 @@
 
 	input {
 		width: 100%;
-		height: 60px;
+		height: 55px;
 		border: 1px solid #cbd3d9;
 		border-radius: 6px;
 		font-size: 16px;
@@ -199,11 +218,11 @@
 	padding: 16px 38px;
 	@include button-style();
 
-	@include mobile{
+	@include mobile {
 		padding: 12px 25px;
-    font-size: 14px;
-    height: unset;
-    line-height: 1.7;
+		font-size: 14px;
+		height: unset;
+		line-height: 1.7;
 	}
 }
 
@@ -215,4 +234,24 @@
 	&:hover {
 		color: #777777;
 	}
+}
+
+.valid-error-check {
+	input {
+		border-color: var(--color-pinterest) !important;
+	}
+
+	label {
+		color: var(--color-pinterest) !important;
+	}
+}
+
+.valid-error-message {
+	color: var(--color-pinterest);
+	display: inline-block;
+	padding: 5px 0;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 400;
+	font-family: 'Poppins', sans-serif;
 }

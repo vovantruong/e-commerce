@@ -3,18 +3,22 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import { MediaQueryProvider } from './context/MediaQueryContext'
 import reportWebVitals from './reportWebVitals'
+import store from './app/store'
+import { Provider } from 'react-redux'
 import './styles/app.scss'
 
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
+import 'swiper/scss'
+import 'swiper/scss/navigation'
+import 'swiper/scss/pagination'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 	<React.StrictMode>
-		<MediaQueryProvider>
-			<App />
-		</MediaQueryProvider>
+		<Provider store={store}>
+			<MediaQueryProvider>
+				<App />
+			</MediaQueryProvider>
+		</Provider>
 	</React.StrictMode>
 )
 
