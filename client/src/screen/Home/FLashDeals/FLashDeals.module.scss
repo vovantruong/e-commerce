@@ -1,5 +1,9 @@
 @import '../../../styles/app.scss';
 
+.flash-deals{
+	padding-top: 80px;
+}
+
 .sale-section {
     position: relative;
 	display: flex;
@@ -88,6 +92,11 @@
 		border-radius: 50%;
 		position: relative;
 		background: var(--color-lighter);
+
+		@include tablet{
+			width: 45px;
+			height: 45px;
+		}
 	}
 }
 
@@ -131,6 +140,10 @@
 	&:hover {
 		.thumbnail-img > img {
 			transform: scale(1.1);
+
+			@include mobile{
+				transform: unset;
+			}
 		}
 
 		.hover-action {
@@ -138,6 +151,10 @@
 			opacity: 1;
 			visibility: visible;
 			transition-delay: 0.2s;
+
+			@include tablet{
+				bottom: 0;
+			}
 		}
 	}
 }
@@ -191,6 +208,17 @@
 	opacity: 0;
 	visibility: hidden;
 	transition: 0.5s;
+
+	@include tablet{
+		margin-top: 10px;
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@include mobile{
+		margin-top: 20px;
+	}
 }
 
 .card-action {
@@ -224,6 +252,10 @@
 		padding: 0 18px;
 		font-weight: 700;
 		@include button-style(var(--color-secondary), #fff);
+
+		@include mobile{
+			padding: 0 30px;
+		}
 	}
 
 	.quick-view > a {
