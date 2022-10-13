@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { actionRegisterCustomer } from './userAction'
+import { actionRegisterCustomer, actionLoginCustomer } from './userAction'
 
 const initialState = {
     loading: false,
@@ -12,7 +12,22 @@ const initialState = {
 const customer = createSlice({
     name: 'customer',
     initialState,
-    reducers: {},
+    reducers: {
+		clearError: (state) => {
+			state.loading = false
+			state.message = ''
+			state.error = ''
+		},
+		actionLogout: (state) => {
+			localStorage.removeItem('tshop_access_token')
+			localStorage.removeItem('tshop_customer')
+			state.token = ''
+			state.customer = ''
+			state.loading = false
+			state.message = ''
+			state.error = ''
+		}
+	},
     extraReducers: {
         // --------------------- login auth ---------------------- //
 		[actionRegisterCustomer.pending]: (state) => {
@@ -28,7 +43,25 @@ const customer = createSlice({
 			state.loading = false
 			state.error = payload
 		},
+
+		// --------------------- login auth ---------------------- //
+		[actionLoginCustomer.pending]: (state) => {
+			state.loading = true
+			state.error = ''
+		},
+		[actionLoginCustomer.fulfilled]: (state, { payload }) => {
+			state.loading = false
+			state.token = payload.access_token
+			state.customer = payload.customer
+			state.message = payload.message
+			state.error = ''
+		},
+		[actionLoginCustomer.rejected]: (state, { payload }) => {
+			state.loading = false
+			state.error = payload
+		},
     }
 })
 
+export const { clearError, actionLogout } = customer.actions
 export default customer.reducer

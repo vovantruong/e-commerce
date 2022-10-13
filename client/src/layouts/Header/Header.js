@@ -16,6 +16,7 @@ import { Autoplay } from 'swiper'
 import UserAccount from './UserAccount/UserAccount'
 import Sidebar from './Sidebar/Sidebar'
 import CartReview from './CartReview/CartReview'
+import { useSelector } from 'react-redux'
 
 const cx = classNames.bind(styles)
 
@@ -42,6 +43,8 @@ const Header = () => {
 	const [visibleSearchBox, setVisibleSearchBox] = useState(false)
 	const [visibleSidebar, setVisibleSidebar] = useState(false)
 	const [visibleCartReview, setVisibleCartReview] = useState(false)
+
+	const { token } = useSelector(state => state.customer)
 
 	const isBreakPoint = useContext(MediaQueryContext)
 
@@ -86,7 +89,7 @@ const Header = () => {
 							<div className={cx('quick-link')}>
 								<Link to="#">Help</Link>
 								<Link to="#">Join Us</Link>
-								<Link to="/login">Sign in</Link>
+								{!token && <Link to="/login">Sign in</Link>}
 							</div>
 						</div>
 					</div>

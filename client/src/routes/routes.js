@@ -32,7 +32,7 @@ const customerRoutes = [
 	{ path: configRoutes.about, components: AboutUs, layout: DefaultLayout },
 	{ path: configRoutes.wishlist, components: WishList, layout: DefaultLayout },
 	{ path: configRoutes.cart, components: Cart, layout: DefaultLayout },
-	{ path: configRoutes.account, components: MyAccount, layout: DefaultLayout },
+	{ path: configRoutes.account, components: MyAccount, layout: DefaultLayout, protected: true },
 ]
 
 const adminRoutes = [

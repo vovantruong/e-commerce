@@ -7,11 +7,22 @@
 
 	.form-submit{
 		margin: 5% auto;
+		max-width: 550px;
 	}
 
 	.submit-btn{
-		display: block;
+
 		margin: 0 auto;
+	}
+
+	.form-wrap{
+		display: flex;
+		align-items: flex-start;
+		gap: 15px;
+
+		.form-group{
+			flex: 1;
+		}
 	}
 }
 

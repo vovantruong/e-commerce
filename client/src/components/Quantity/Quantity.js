@@ -5,12 +5,12 @@ import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
 
 const cx = classNames.bind(styles)
 
-const Quantity = ({ className, value = 0, handleUp, handleDown }) => {
+const Quantity = ({ className, upClassName, downClassName, value = 0, handleUp, handleDown }) => {
 	const [number, setNumber] = useState(value)
 
 	return (
 		<div className={cx('quantity', className)}>
-			<span onClick={() => (number > 0 ? setNumber((prev) => prev - 1) : {})}>
+			<span className={cx(downClassName)} onClick={() => (number > 0 ? setNumber((prev) => prev - 1) : {})}>
 				<AiOutlineMinus />
 			</span>
 			<input
@@ -19,7 +19,7 @@ const Quantity = ({ className, value = 0, handleUp, handleDown }) => {
 				value={number}
 				onChange={(e) => setNumber(e.target.value)}
 			/>
-			<span onClick={() => setNumber((prev) => prev + 1)}><AiOutlinePlus /></span>
+			<span className={cx(upClassName)} onClick={() => setNumber((prev) => prev + 1)}><AiOutlinePlus /></span>
 		</div>
 	)
 }

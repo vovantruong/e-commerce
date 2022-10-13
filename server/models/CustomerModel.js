@@ -19,7 +19,7 @@ const CustomerSchema = new mongoose.Schema({
 		],
 	},
 	phone: {
-		type: Number,
+		type: String,
 		require: true,
 	},
 	address: {
@@ -28,10 +28,16 @@ const CustomerSchema = new mongoose.Schema({
 		minLength: 6,
 		select: false,
 	},
+	image: {
+		type: String
+	},
 	password: {
 		type: String,
 		required: true,
 		minLength: 6,
+	},
+	timestamp: {
+		type: Date
 	},
 	resetPasswordToken: String,
 	resetPasswordExpire: Date,

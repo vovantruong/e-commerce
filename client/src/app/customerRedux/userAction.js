@@ -1,25 +1,44 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import sendRequest from '~/utils/sendRequest'
+import { toast } from 'react-toastify'
+import * as sendRequest from '~/utils/sendRequest'
 
-export const actionRegisterCustomer = createAsyncThunk('CUSTOMER_REGISTER', async(data, {rejectWithValue}) => {
-    // const { username, email, phone, address, password } = data
-    try {
+export const actionRegisterCustomer = createAsyncThunk('CUSTOMER_REGISTER', async (data, { rejectWithValue }) => {
+	try {
+		const res = await sendRequest.post('/auth/register', data)
 
-        const res = await sendRequest.post('/auth/register', data,)
-
-        console.log(res);
-
-        if(res.success){
-            return res
-        }else{
-            return rejectWithValue(res.message)
-        }
-        
-    } catch (error) {
-        if (error.response && error.response.data.message) {
+		if (res.success) {
+			return res
+		} else {
+			return rejectWithValue(res.message)
+		}
+	} catch (error) {
+		if (error.response && error.response.data.message) {
 			return rejectWithValue(error.response.data.message)
 		} else {
 			return rejectWithValue(error.message)
 		}
-    }
+	}
+})
+
+export const actionLoginCustomer = createAsyncThunk('CUSTOMER_LOGIN', async (data, { rejectWithValue }) => {
+	try {
+		const res = await sendRequest.post('/auth/login', data)
+
+		if (res.success) {
+			localStorage.setItem('tshop_access_token', JSON.stringify(res.access_token))
+			localStorage.setItem('tshop_customer', JSON.stringify(res.customer))
+			toast.success('Login successfully', {
+				style: { textAlign: 'center' },
+			})
+			return res
+		} else {
+			return rejectWithValue(res.message)
+		}
+	} catch (error) {
+		if (error.response && error.response.data.message) {
+			return rejectWithValue(error.response.data.message)
+		} else {
+			return rejectWithValue(error.message)
+		}
+	}
 })

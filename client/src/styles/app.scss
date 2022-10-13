@@ -4,6 +4,23 @@
 @import './button.scss';
 @import './container.scss';
 
+@mixin scrollbar(){
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #fafafa;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #3577f0;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+}
+
+
 * {
 	padding: 0;
 	margin: 0;
@@ -17,19 +34,8 @@ body {
 	line-height: 1.5;
 	color: #292930;
 
-	&::-webkit-scrollbar {
-		width: 5px;
-	}
-
-	&::-webkit-scrollbar-track {
-		background: #fafafa;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background: #3577f0;
-		border-radius: 10px;
-		cursor: pointer;
-	}
+	@include scrollbar();
+	
 }
 
 a {
@@ -206,3 +212,4 @@ html {
 		transition: none !important;
 	}
 }
+
