@@ -11,16 +11,22 @@ const Quantity = ({ className, upClassName, downClassName, value = 0, handleUp, 
 
 	return (
 		<div className={cx('quantity', className)}>
-			<span className={cx('btn-action',downClassName)} onClick={() => (number > 0 ? setNumber((prev) => prev - 1) : {})}>
+			<span
+				className={cx('btn-action', downClassName)}
+				onClick={() => (number > 0 ? setNumber((prev) => prev - 1) : {})}
+			>
 				<HiMinus />
 			</span>
 			<input
+				readOnly
 				type="number"
 				className={cx('quantity-input')}
 				value={number}
 				onChange={(e) => setNumber(e.target.value)}
 			/>
-			<span className={cx('btn-action',upClassName)} onClick={() => setNumber((prev) => prev + 1)}><HiPlus /></span>
+			<span className={cx('btn-action', upClassName)} onClick={() => setNumber((prev) => prev + 1)}>
+				<HiPlus />
+			</span>
 		</div>
 	)
 }

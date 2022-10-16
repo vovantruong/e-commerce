@@ -1,21 +1,21 @@
 @import '../../../styles/app.scss';
 
-.flash-deals{
+.flash-deals {
 	padding-top: 80px;
 }
 
 .sale-section {
-    position: relative;
+	position: relative;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
 	margin-bottom: 50px;
 
-    @include mobile{
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 40px;
-    }
+	@include mobile {
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: 40px;
+	}
 }
 
 .wrap-title {
@@ -31,6 +31,9 @@
 		margin-bottom: 10px;
 
 		.icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			height: 24px;
 			width: 24px;
 			line-height: 24px;
@@ -40,6 +43,10 @@
 			margin-right: 10px;
 			background-color: var(--light-primary);
 			color: var(--color-white);
+
+			svg {
+				font-size: 16px;
+			}
 		}
 	}
 
@@ -48,22 +55,22 @@
 		font-weight: 700;
 		line-height: 1.3;
 
-        @include tablet{
-            font-size: 30px;
-        }
+		@include tablet {
+			font-size: 30px;
+		}
 
-        @include mobile{
-            font-size: 26px;
-        }
+		@include mobile {
+			font-size: 26px;
+		}
 	}
 
-    @include tablet{
-        padding-right: 40px;
-    }
+	@include tablet {
+		padding-right: 40px;
+	}
 
-    @include mobile{
-        margin-bottom: 30px;
-    }
+	@include mobile {
+		margin-bottom: 30px;
+	}
 }
 
 .wrap-countdown {
@@ -93,7 +100,7 @@
 		position: relative;
 		background: var(--color-lighter);
 
-		@include tablet{
+		@include tablet {
 			width: 45px;
 			height: 45px;
 		}
@@ -128,11 +135,11 @@
 		}
 	}
 
-    @include mobile{
-        position: absolute;
-        right: 0;
-        top: 10%;
-    }
+	@include mobile {
+		position: absolute;
+		right: 0;
+		top: 10%;
+	}
 }
 
 .product-item {
@@ -141,7 +148,7 @@
 		.thumbnail-img > img {
 			transform: scale(1.1);
 
-			@include mobile{
+			@include mobile {
 				transform: unset;
 			}
 		}
@@ -152,7 +159,7 @@
 			visibility: visible;
 			transition-delay: 0.2s;
 
-			@include tablet{
+			@include tablet {
 				bottom: 0;
 			}
 		}
@@ -180,9 +187,9 @@
 		transition: 0.3s;
 	}
 
-    @include mobile{
-        height: unset;
-    }
+	@include mobile {
+		height: unset;
+	}
 }
 
 .thumbnail-badget {
@@ -209,14 +216,14 @@
 	visibility: hidden;
 	transition: 0.5s;
 
-	@include tablet{
+	@include tablet {
 		margin-top: 10px;
 		position: relative;
 		opacity: 1;
 		visibility: visible;
 	}
 
-	@include mobile{
+	@include mobile {
 		margin-top: 20px;
 	}
 }
@@ -253,7 +260,7 @@
 		font-weight: 700;
 		@include button-style(var(--color-secondary), #fff);
 
-		@include mobile{
+		@include mobile {
 			padding: 0 30px;
 		}
 	}
