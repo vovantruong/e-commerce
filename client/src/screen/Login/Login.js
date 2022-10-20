@@ -76,7 +76,7 @@ const Login = () => {
 				<div className={cx('wrapper__login')}>
 					<div className={cx('next-signup')}>
 						<span>Not a member?</span>
-						<Link to="/register" onClick={() => dispatch(clearError)} className={cx('link')}>
+						<Link to="/register" onClick={() => dispatch(clearError())} className={cx('link')}>
 							Sign Up Now
 						</Link>
 					</div>

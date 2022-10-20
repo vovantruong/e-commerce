@@ -151,15 +151,14 @@
 		margin-right: 30px;
 		max-width: 120px;
 
-		a {
-			background-color: #f7f7f7;
+		.thumbnail-link {
 			border-radius: 6px;
 			display: block;
 			transition: all 0.3s;
 			overflow: hidden;
 		}
 
-		img {
+		.thumbnail-img {
 			max-width: 100%;
 			height: auto;
 			border-radius: 6px;

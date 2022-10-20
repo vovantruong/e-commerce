@@ -42,8 +42,8 @@ const SearchBox = ({ className, visible, onClose }) => {
 					{dataProduct.map((item, index) => (
 						<li className={cx('product-item')} key={index}>
 							<div className={cx('thumbnail')}>
-								<Link to="#">
-									<img src={item.product_img} alt="..." />
+								<Link to="#" className={cx('thumbnail-link')}>
+									<img className={cx('thumbnail-img')} src={item.product_img} alt="..." />
 								</Link>
 							</div>
 							<div className={cx('product-content')}>

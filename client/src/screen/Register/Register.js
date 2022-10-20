@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Register.module.scss'
 import Logo from '../../assets/logo-text.png'
@@ -74,6 +74,7 @@ const Register = () => {
 		const { payload } = await dispatch(actionRegisterCustomer(data))
 
 		if (payload.success) {
+			console.log('register true');
 		}
 	}
 
@@ -99,7 +100,7 @@ const Register = () => {
 				<div className={cx('wrapper__login')}>
 					<div className={cx('next-signup')}>
 						<span>Already a member?</span>
-						<Link to="/login" onClick={() => dispatch(clearError)} className={cx('link')}>
+						<Link to="/login" className={cx('link')}  onClick={() => dispatch(clearError())}>
 							Sign In
 						</Link>
 					</div>
