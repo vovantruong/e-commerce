@@ -5,20 +5,22 @@ import { MediaQueryProvider } from './context/MediaQueryContext'
 import reportWebVitals from './reportWebVitals'
 import store from './app/store'
 import { Provider } from 'react-redux'
-import './styles/app.scss'
 
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 
 import 'react-toastify/dist/ReactToastify.css'
+import GlobalStyle from './styles/GlobalStyle'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<MediaQueryProvider>
-				<App />
+				<GlobalStyle>
+					<App />
+				</GlobalStyle>
 			</MediaQueryProvider>
 		</Provider>
 	</React.StrictMode>

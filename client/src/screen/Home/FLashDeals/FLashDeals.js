@@ -8,10 +8,11 @@ import { ImEye } from 'react-icons/im'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { dataProduct } from '~/constant/dataProduct'
 import { Link } from 'react-router-dom'
+import ShowCountdown from '../../../components/ShowCountdown/ShowCountdown'
 
 const cx = classNames.bind(styles)
 
-const FLashDeals = () => {
+const FLashDeals = ({ targetDate }) => {
 	const swiperRef = useRef()
 
 	return (
@@ -27,7 +28,7 @@ const FLashDeals = () => {
 						</div>
 						<h2 className={cx('title')}>FLash Deals</h2>
 					</div>
-					<div className={cx('wrap-countdown')}>
+					{/* <div className={cx('wrap-countdown')}>
 						<div className={cx('countdown-section')}>01</div>
 						<span>:</span>
 						<div className={cx('countdown-section')}>23</div>
@@ -35,7 +36,14 @@ const FLashDeals = () => {
 						<div className={cx('countdown-section')}>59</div>
 						<span>:</span>
 						<div className={cx('countdown-section')}>59</div>
-					</div>
+					</div> */}
+					<ShowCountdown
+						className={cx('wrap-countdown')}
+						classNameSection={cx('countdown-section')}
+						classNameTimer={cx('countdown-timer')}
+						targetDate={targetDate}
+						hideTitle
+					/>
 					<div className={cx('wrap-panigate-slide')}>
 						<button onClick={() => swiperRef.current.swiper.slidePrev()}>
 							<HiOutlineArrowNarrowLeft />
@@ -54,7 +62,7 @@ const FLashDeals = () => {
 						freeMode={true}
 						speed={1000}
 						breakpoints={{
-							320: {
+							0: {
 								slidesPerView: 1,
 								slidesPerGroup: 1,
 							},
@@ -64,6 +72,7 @@ const FLashDeals = () => {
 							},
 							1024: {
 								slidesPerView: 4,
+								slidesPerGroup: 1,
 							},
 						}}
 					>

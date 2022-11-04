@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Register.module.scss'
 import Logo from '../../assets/logo-text.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { MediaQueryContext } from '~/context/MediaQueryContext'
 
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -13,15 +13,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { actionRegisterCustomer } from '~/app/customerRedux/userAction'
 
 import CircularProgress from '@mui/material/CircularProgress'
-import Alert from '@mui/material/Alert';
+import Alert from '@mui/material/Alert'
 import { clearError } from '~/app/customerRedux/userSlice'
 
 const cx = classNames.bind(styles)
 
 const Register = () => {
 	const isBreakPoint = useContext(MediaQueryContext)
+	const [visible, setVisible] = useState(false)
 
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 	const { loading, error } = useSelector((state) => state.customer)
 
 	const schemaRegister = yup
@@ -74,7 +76,7 @@ const Register = () => {
 		const { payload } = await dispatch(actionRegisterCustomer(data))
 
 		if (payload.success) {
-			console.log('register true');
+			navigate('/login')
 		}
 	}
 
@@ -100,14 +102,18 @@ const Register = () => {
 				<div className={cx('wrapper__login')}>
 					<div className={cx('next-signup')}>
 						<span>Already a member?</span>
-						<Link to="/login" className={cx('link')}  onClick={() => dispatch(clearError())}>
+						<Link to="/login" className={cx('link')} onClick={() => dispatch(clearError())}>
 							Sign In
 						</Link>
 					</div>
 					<form className={cx('form-submit')} onSubmit={handleSubmit(handleRegister)}>
 						<h3 className={cx('form-title')}>Sign up to Tshop</h3>
 						<p className={cx('form-desc-title')}>Enter your detail below</p>
-						{ error && <Alert style={{marginBottom: "30px", fontSize: "16px"}} severity="error">{error}</Alert>}
+						{error && (
+							<Alert style={{ marginBottom: '30px', fontSize: '16px' }} severity="error">
+								{error}
+							</Alert>
+						)}
 						<div className={cx('form-wrap')}>
 							<div className={cx('form-group', { 'valid-error-check': errors.firstname })}>
 								<input

@@ -4,7 +4,6 @@ import styles from './Header.module.scss'
 import { Link, NavLink } from 'react-router-dom'
 import Dropdown from '~/components/Dropdown/Dropdown'
 import { BsCart2, BsHeart, BsArrowLeft, BsArrowRight } from 'react-icons/bs'
-import { BiUser } from 'react-icons/bi'
 import { IoIosMenu } from 'react-icons/io'
 import { IoSearchOutline } from 'react-icons/io5'
 import { VscChevronDown } from 'react-icons/vsc'
@@ -17,6 +16,7 @@ import UserAccount from './UserAccount/UserAccount'
 import Sidebar from './Sidebar/Sidebar'
 import CartReview from './CartReview/CartReview'
 import { useSelector } from 'react-redux'
+import Tooltip from '@mui/material/Tooltip'
 
 const cx = classNames.bind(styles)
 
@@ -44,7 +44,7 @@ const Header = () => {
 	const [visibleSidebar, setVisibleSidebar] = useState(false)
 	const [visibleCartReview, setVisibleCartReview] = useState(false)
 
-	const { token } = useSelector(state => state.customer)
+	const { token } = useSelector((state) => state.customer)
 
 	const isBreakPoint = useContext(MediaQueryContext)
 
@@ -100,7 +100,7 @@ const Header = () => {
 
 	function renderNavbarNav() {
 		return (
-			<nav className={cx('navbar__nav')}>
+			<nav className={cx('navbar-nav')}>
 				<ul className={cx('nav-menu')}>
 					{dataNavbar?.map((item, i) => (
 						<li key={i} className={cx('nav-menu__item')}>
@@ -121,7 +121,7 @@ const Header = () => {
 
 	function renderHeaderCampaign() {
 		return (
-			<div className={cx('header-campain')} >
+			<div className={cx('header-campain')}>
 				<div className="container">
 					<div className={cx('wrapper')}>
 						<button
@@ -171,13 +171,13 @@ const Header = () => {
 				<div className={cx('main-menu', scroll ? 'sticky-header' : '')}>
 					<div className="container">
 						<div className={cx('navbar')}>
-							<div className={cx('navbar__brand')}>
-								<Link to="/" className={cx('navbar__brand-link')}>
+							<div className={cx('navbar-brand')}>
+								<Link to="/" className={cx('navbar-brand__link')}>
 									<img src={require('../../assets/logo-text.png')} alt="tshop" />
 								</Link>
 							</div>
 							{!isBreakPoint.tablet && renderNavbarNav()}
-							<div className={cx('navbar__action')}>
+							<div className={cx('navbar-action')}>
 								<ul className={cx('action-list')}>
 									<li className={cx('action-search')} onClick={() => setVisibleSearchBox(true)}>
 										{isBreakPoint.desktop ? (
@@ -198,17 +198,23 @@ const Header = () => {
 											<BsHeart />
 										</Link>
 									</li>
+
 									<li className={cx('action-cart')}>
-										<button className={cx('action-toggle')} onClick={() => setVisibleCartReview(true)} >
+										<button
+											className={cx('action-toggle')}
+											onClick={() => setVisibleCartReview(true)}
+										>
 											<div className={cx('cart-icon')}>
 												<BsCart2 className={cx('icon')} />
 												<span className={cx('quantity')}>3</span>
 											</div>
 										</button>
 									</li>
+
 									<li className={cx('action-account')}>
 										<UserAccount buttonClassName={cx('action-toggle')} />
 									</li>
+
 									{isBreakPoint.tablet && (
 										<li className={cx('action-sidebar')}>
 											<button

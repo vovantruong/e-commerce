@@ -17,12 +17,20 @@ import WhyChose from './WhyChose/WhyChose'
 const cx = classNames.bind(styles)
 
 const Home = () => {
+
+	const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000
+	const ONE_DAYS_IN_MS = 1 * 24 * 60 * 60 * 1000
+	const NOW_IN_MS = new Date().getTime()
+
+	const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS
+	const dateTimeAfterOneDays = NOW_IN_MS + ONE_DAYS_IN_MS
+
 	return (
 		<main className={cx('home-page')}>
 			<Banner />
 			<Categories />
-			<Countdown />
-			<FLashDeals />
+			<Countdown targetDate={dateTimeAfterThreeDays}/>
+			<FLashDeals targetDate={dateTimeAfterOneDays}/>
 			<AboutUs />
 			<NewFeature />
 			<BestSellers />

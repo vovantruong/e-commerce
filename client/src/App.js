@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import ProtectedRoute from './routes/ProtectedRoute'
-import { adminRoutes, customerRoutes } from './routes/routes'
+import { customerRoutes } from './routes/routes'
 
 function App() {
 	useEffect(() => {
@@ -44,23 +44,6 @@ function App() {
 										) : (
 											<Page />
 										)}
-									</Layout>
-								}
-							/>
-						)
-					})}
-
-					{/* ==================== ROUTES ADMIN ===================== */}
-					{adminRoutes.map((routes, index) => {
-						let Page = routes.components ?? Fragment
-						let Layout = routes.layout ?? Fragment
-						return (
-							<Route
-								key={index}
-								path={routes.path}
-								element={
-									<Layout>
-										<Page />
 									</Layout>
 								}
 							/>

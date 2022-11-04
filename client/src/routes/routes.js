@@ -14,13 +14,6 @@ import WishList from '~/screen/WishList/WishList'
 import Cart from '~/screen/Cart/Cart'
 import MyAccount from '~/screen/MyAccount/MyAccount'
 
-
-// =========================== ROUTES ADMIN ================================== //
-import DefaultLayoutAdmin from '~/admin/layouts/DefaultLayoutAdmin/DefaultLayoutAdmin'
-import Dashboard from '~/admin/page/Dashboard/Dashboard'
-import LoginAdmin from '~/admin/page/LoginAdmin/LoginAdmin'
-import RegisterAdmin from '~/admin/page/RegisterAdmin.js/RegisterAdmin'
-
 const customerRoutes = [
 	{ path: configRoutes.login, components: Login, layout: null },
 	{ path: configRoutes.register, components: Register, layout: null },
@@ -35,10 +28,4 @@ const customerRoutes = [
 	{ path: configRoutes.account, components: MyAccount, layout: DefaultLayout, protected: true },
 ]
 
-const adminRoutes = [
-	{ path: configRoutes.loginAdmin, components: LoginAdmin, layout: null },
-	{ path: configRoutes.registerAdmin, components: RegisterAdmin, layout: null },
-	{ path: configRoutes.dashboard, components: Dashboard, layout: DefaultLayoutAdmin },
-]
-
-export { customerRoutes, adminRoutes }
+export { customerRoutes }

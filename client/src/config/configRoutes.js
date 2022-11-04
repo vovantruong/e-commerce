@@ -13,10 +13,4 @@ export const configRoutes = {
     wishlist: '/wishlist',
     cart: '/cart',
     account: '/account',
-
-    // ======================== ROUTES ADMIN ============================= //
-    dashboard: "/ad/dash",
-    loginAdmin: "/ad/login",
-    registerAdmin: "/ad/register",
-    forgotAdmin: "/ad/forgotpassword",
 }

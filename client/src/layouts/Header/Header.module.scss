@@ -129,14 +129,14 @@
 	}
 }
 
-.navbar__brand {
+.navbar-brand {
 	width: 157px;
 	height: 40px;
 	display: flex;
 	align-items: center;
 }
 
-.navbar__brand-link {
+.navbar-brand__link {
 	width: 100%;
 	height: 100%;
 
@@ -146,7 +146,11 @@
 	}
 }
 
-.navbar__nav {
+.navbar-action{
+	
+}
+
+.navbar-nav {
 	margin: 0 20px;
 	flex: 1;
 }

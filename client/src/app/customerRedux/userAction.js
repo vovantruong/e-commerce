@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import React from 'react'
 import { toast } from 'react-toastify'
 import * as sendRequest from '~/utils/sendRequest'
 
@@ -7,6 +8,15 @@ export const actionRegisterCustomer = createAsyncThunk('CUSTOMER_REGISTER', asyn
 		const res = await sendRequest.post('/auth/register', data)
 
 		if (res.success) {
+			toast.success(
+				<React.Fragment>
+					<h5>Register successfully!</h5>
+					<div>Please login to shop according to your preferences!!</div>
+				</React.Fragment>,
+				{
+					style: { textAlign: 'left' },
+				}
+			)
 			return res
 		} else {
 			return rejectWithValue(res.message)

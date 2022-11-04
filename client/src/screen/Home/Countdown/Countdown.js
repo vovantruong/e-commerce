@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Countdown.module.scss'
 import { BsPhone } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import ShowCountdown from '../../../components/ShowCountdown/ShowCountdown'
 
 const cx = classNames.bind(styles)
 
-const Countdown = () => {
+const Countdown = ({ targetDate }) => {
 	return (
 		<div className={cx('countdown-area')}>
 			<div className="container">
@@ -22,25 +23,7 @@ const Countdown = () => {
 								</div>
 								<h2 className={cx('title')}>Enhance Your Phone Experience</h2>
 							</div>
-							<div className={cx('content-countdown')}>
-								<div className={cx('countdown-section')}>
-									<div className={cx('countdown-number')}>0</div>
-									<div className={cx('countdown-unit')}>Day</div>
-								</div>
-								<div className={cx('countdown-section')}>
-									<div className={cx('countdown-number')}>00</div>
-									<div className={cx('countdown-unit')}>Hrs</div>
-								</div>
-								<div className={cx('countdown-section')}>
-									<div className={cx('countdown-number')}>00</div>
-									<div className={cx('countdown-unit')}>Min</div>
-								</div>
-								<div className={cx('countdown-section')}>
-									<div className={cx('countdown-number')}>00</div>
-									<div className={cx('countdown-unit')}>Sec</div>
-								</div>
-							</div>
-
+							<ShowCountdown showTick={false} targetDate={targetDate} className={cx('wrap-countdown')} />
 							<Link className={cx('content-btn')} to="#">
 								Check it Out!
 							</Link>
