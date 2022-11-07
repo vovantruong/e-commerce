@@ -19,38 +19,38 @@ const ShowCountdown = ({
 }) => {
 	const [days, hours, minutes, seconds] = useCountdown(targetDate)
 	return (
-		<div className={cx(className, 'content-countdown')}>
+		<div className={cx('countdown-area', className)}>
 			{!closeDay && (
 				<>
-					<div className={cx(classNameSection,'countdown-section' )}>
-						<div className={cx(classNameTimer,'countdown-number')}>{days}</div>
-						{!hideTitle && <div className={cx('countdown-unit')}>Day</div>}
+					<div className={cx(classNameSection,'wrap-section' )}>
+						<div className={cx(classNameTimer,'number')}>{days}</div>
+						{!hideTitle && <div className={cx('unit')}>Day</div>}
 					</div>
 					{showTick && <span className={cx('ticky')}>:</span>}
 				</>
 			)}
 			{!closeHours && (
 				<>
-					<div className={cx(classNameSection,'countdown-section')}>
-						<div className={cx(classNameTimer,'countdown-number')}>{hours}</div>
-						{!hideTitle && <div className={cx('countdown-unit')}>Hrs</div>}
+					<div className={cx(classNameSection,'wrap-section')}>
+						<div className={cx(classNameTimer,'number')}>{hours}</div>
+						{!hideTitle && <div className={cx('unit')}>Hrs</div>}
 					</div>
 					{showTick && <span className={cx('ticky')}>:</span>}
 				</>
 			)}
 			{!closeMinutes && (
 				<>
-					<div className={cx(classNameSection,'countdown-section')}>
-						<div className={cx(classNameTimer,'countdown-number')}>{minutes}</div>
-						{!hideTitle && <div className={cx('countdown-unit')}>Min</div>}
+					<div className={cx(classNameSection,'wrap-section')}>
+						<div className={cx(classNameTimer,'number')}>{minutes}</div>
+						{!hideTitle && <div className={cx('unit')}>Min</div>}
 					</div>
 					{showTick && <span className={cx('ticky')}>:</span>}
 				</>
 			)}
 			{!closeSeconds && (
-				<div className={cx(classNameSection,'countdown-section')}>
-					<div className={cx(classNameTimer,'countdown-number')}>{seconds}</div>
-					{!hideTitle && <div className={cx('countdown-unit')}>Sec</div>}
+				<div className={cx(classNameSection,'wrap-section')}>
+					<div className={cx(classNameTimer,'number')}>{seconds}</div>
+					{!hideTitle && <div className={cx('unit')}>Sec</div>}
 				</div>
 			)}
 		</div>

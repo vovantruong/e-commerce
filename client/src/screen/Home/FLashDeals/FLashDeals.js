@@ -8,7 +8,7 @@ import { ImEye } from 'react-icons/im'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { dataProduct } from '~/constant/dataProduct'
 import { Link } from 'react-router-dom'
-import ShowCountdown from '../../../components/ShowCountdown/ShowCountdown'
+import ShowCountdown from '~/components/ShowCountdown/ShowCountdown'
 
 const cx = classNames.bind(styles)
 
@@ -28,21 +28,12 @@ const FLashDeals = ({ targetDate }) => {
 						</div>
 						<h2 className={cx('title')}>FLash Deals</h2>
 					</div>
-					{/* <div className={cx('wrap-countdown')}>
-						<div className={cx('countdown-section')}>01</div>
-						<span>:</span>
-						<div className={cx('countdown-section')}>23</div>
-						<span>:</span>
-						<div className={cx('countdown-section')}>59</div>
-						<span>:</span>
-						<div className={cx('countdown-section')}>59</div>
-					</div> */}
 					<ShowCountdown
-						className={cx('wrap-countdown')}
-						classNameSection={cx('countdown-section')}
-						classNameTimer={cx('countdown-timer')}
 						targetDate={targetDate}
-						hideTitle
+						className={cx('wrap-cd')}
+						classNameSection={cx('cd-section')}
+						classNameTimer={cx('cd-timer')}
+						hideTitle={true}
 					/>
 					<div className={cx('wrap-panigate-slide')}>
 						<button onClick={() => swiperRef.current.swiper.slidePrev()}>
@@ -109,10 +100,10 @@ const FLashDeals = ({ targetDate }) => {
 											<Link to="#">{item.product_name}</Link>
 										</h4>
 										<div className={cx('price-variant')}>
+											<span className={cx('current-price')}>${item.product_price}</span>
 											{item.product_old_price && item.product_old_price !== '0' && (
 												<span className={cx('old-price')}>${item.product_old_price}</span>
 											)}
-											<span className={cx('current-price')}>${item.product_price}</span>
 										</div>
 									</div>
 								</div>

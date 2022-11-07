@@ -46,7 +46,7 @@ const Categories = () => {
 							spaceBetween={20}
 							speed={1500}
 							breakpoints={{
-								320: {
+								0: {
 									slidesPerView: 1,
 									spaceBetween: 30,
 									slidesPerGroup: 1,

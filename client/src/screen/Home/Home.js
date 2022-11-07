@@ -1,13 +1,13 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 import styles from './Home.module.scss'
+
 import Banner from './Banner/Banner'
-import FLashDeals from './FLashDeals/FLashDeals'
 import BestSellers from './BestSellers/BestSellers'
-import AboutUs from './AboutUs/AboutUs'
 import NewFeature from './NewFeature/NewFeature'
 import Categories from './Categories/Categories'
 import Countdown from './Countdown/Countdown'
+import FLashDeals from './FLashDeals/FLashDeals'
 import Poster from './Poster/Poster'
 import Newletter from './Newletter/Newletter'
 import ExploreProduct from './ExploreProduct/ExploreProduct'
@@ -26,20 +26,19 @@ const Home = () => {
 	const dateTimeAfterOneDays = NOW_IN_MS + ONE_DAYS_IN_MS
 
 	return (
-		<main className={cx('home-page')}>
+		<div className={cx('home-page')}>
 			<Banner />
 			<Categories />
 			<Countdown targetDate={dateTimeAfterThreeDays}/>
 			<FLashDeals targetDate={dateTimeAfterOneDays}/>
-			<AboutUs />
-			<NewFeature />
 			<BestSellers />
-			<ExploreProduct />
 			<WhyChose />
+			<NewFeature />
 			<Feedback />
+			<ExploreProduct />
 			<Poster />
 			<Newletter />
-		</main>
+		</div>
 	)
 }
 export default Home

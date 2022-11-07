@@ -126,12 +126,16 @@ video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	vertical-align: baseline;
 }
 
 svg,
 img {
 	vertical-align: middle;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
 }
 
 img,
