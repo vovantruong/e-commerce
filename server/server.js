@@ -3,7 +3,7 @@ const express = require('express');
 const connectDB = require('./config/mongoDB');
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const fileUpload = require('express-fileupload')
+// const fileUpload = require('express-fileupload')
 
 // connect mongodb
 connectDB();
@@ -11,18 +11,23 @@ connectDB();
 const app = express();
 app.use(express.json())
 app.use(cors())
-app.use(bodyParser())
+app.use(bodyParser.json())
 app.use(function(req, res, next) {
     res.setHeader("Content-Type", "application/json");
     next();
 });
-app.use(fileUpload({
-    useTempFiles: true
-}))
+// app.use(fileUpload({
+//     useTempFiles: true
+// }))
 
-// Routes
+// auth route
 app.use("/api/auth", require('./routes/auth'))
+
+// auth admin route
 app.use("/api/auth-admin", require('./routes/authAdmin'))
+
+// product route
+app.use("/api", require('./routes/productRoute'))
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('/client/build'))
