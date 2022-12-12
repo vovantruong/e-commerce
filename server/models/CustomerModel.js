@@ -29,7 +29,7 @@ const CustomerSchema = new mongoose.Schema({
 		select: false,
 	},
 	image: {
-		type: String
+		type: Array,
 	},
 	password: {
 		type: String,

@@ -46,11 +46,11 @@ const BestSellers = () => {
 						<div className={cx('wrap-item')} key={index}>
 							<div className={cx('product-card')}>
 								<div className={cx('product-info')}>
-									<Link to="#" className={cx('cart-btn')}>
+									<Link to={`/product-detail/${item.id}`} className={cx('cart-btn')}>
 										<BsCart2 />
 									</Link>
 									<div className={cx('content')}>
-										<Link to="#" className={cx('content-title')}>
+										<Link to={`/product-detail/${item.id}`} className={cx('content-title')}>
 											{item.product_name}
 										</Link>
 										<div className={cx('content-variant')}>
