@@ -26,7 +26,6 @@ const CustomerSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		minLength: 6,
-		select: false,
 	},
 	image: {
 		type: Array,

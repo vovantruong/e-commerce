@@ -11,7 +11,7 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
 
 import 'swiper/css/thumbs'
-import "swiper/css/free-mode";
+import 'swiper/css/free-mode'
 
 import 'react-toastify/dist/ReactToastify.css'
 import GlobalStyle from './styles/GlobalStyle'

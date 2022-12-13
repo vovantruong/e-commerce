@@ -28,3 +28,11 @@ exports.addProduct = async (req, res, next) => {
 		return res.status(500).json({ success: false, message: `Internal server error!. ${error.message}` })
 	}
 }
+
+exports.getProducts = async (req, res,next) => {
+	try {
+		
+	} catch (error) {
+		
+	}
+}

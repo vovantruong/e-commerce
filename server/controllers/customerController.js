@@ -23,7 +23,7 @@ exports.register = async (req, res, next) => {
 			phone,
 			address,
 			password,
-			image: '',
+			image: [],
 			timestamp: new Date()
 		})
 
@@ -48,10 +48,10 @@ exports.login = async (req, res, next) => {
 		const isMatch = await custommer.matchPassword(password)
 		if (!isMatch) return res.status(400).json({ success: false, message: 'Email or password incorrect' })
 
-		const getCustommer = await CustomerModel.findOne({ email }, {_id: 0, password: 0, timestamp: 0, __v:0})
+		const getCustommer = await CustomerModel.findOne({ email }, {_id: 0, password: 0, timestamp: 0, __v: 0})
 
 		const token = custommer.getSignedToken()
-		res.status(200).json({ success: true, message: 'Login successfully', access_token: token, customer: getCustommer })
+		res.status(200).json({ success: true, message: 'Login successfully', access_token: token, data: getCustommer })
 	} catch (error) {
 		return res.status(500).json({ success: false, message: `Internal server error!. ${error.message}` })
 	}

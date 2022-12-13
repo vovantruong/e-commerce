@@ -31,10 +31,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 
-const { addProduct } = require('../controllers/productController')
+const { addProduct, getProducts } = require('../controllers/productController')
 
 product_route.post("/add-product",upload.array("product_image"),addProduct)
-
+product_route.get("/get-products",getProducts)
 
 
 module.exports = product_route

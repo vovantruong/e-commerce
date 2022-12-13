@@ -16,15 +16,9 @@ app.use(function(req, res, next) {
     res.setHeader("Content-Type", "application/json");
     next();
 });
-// app.use(fileUpload({
-//     useTempFiles: true
-// }))
 
 // auth route
-app.use("/api/auth", require('./routes/auth'))
-
-// auth admin route
-app.use("/api/auth-admin", require('./routes/authAdmin'))
+app.use("/api", require('./routes/customerRoute'))
 
 // product route
 app.use("/api", require('./routes/productRoute'))
