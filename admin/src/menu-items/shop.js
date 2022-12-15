@@ -9,23 +9,23 @@ const icons = {
     ReconciliationOutlined
 };
 
-// ==============================|| MENU ITEMS - EXTRA PAGES ||============================== //
+// ==============================|| MENU ITEMS - EXTRA SHOPS ||============================== //
 
-const pages = {
+const shops = {
     id: 'shops',
     title: 'Shops',
     type: 'group',
     children: [
         {
             id: 'product',
-            title: 'Product',
+            title: 'Products',
             type: 'item',
             url: '/products',
             icon: icons.ShopOutlined
         },
         {
             id: 'category',
-            title: 'Category',
+            title: 'Categories',
             type: 'item',
             url: '/category',
             icon: icons.BarChartOutlined
@@ -47,4 +47,4 @@ const pages = {
     ]
 };
 
-export default pages;
+export default shops;
