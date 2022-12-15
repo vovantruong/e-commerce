@@ -30,8 +30,8 @@ const Home = () => {
 			<Banner />
 			<Categories />
 			<Countdown targetDate={dateTimeAfterThreeDays}/>
-			<FLashDeals targetDate={dateTimeAfterOneDays}/>
 			<BestSellers />
+			<FLashDeals targetDate={dateTimeAfterOneDays}/>
 			<WhyChose />
 			<NewFeature />
 			<Feedback />
