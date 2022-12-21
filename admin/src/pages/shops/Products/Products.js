@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import MainCard from 'components/MainCard';
 import Button from '@mui/material/Button';
 import { PlusCircleOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -21,12 +21,11 @@ import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import Stack from '@mui/material/Stack';
+import AddProducts from './AddProducts';
 
 function createData(images, name, price, desc, category, manufactures, discount) {
     return {
@@ -42,7 +41,7 @@ function createData(images, name, price, desc, category, manufactures, discount)
 
 const rows = [
     createData(
-        require('../../assets/images/iphone-13-pink.png'),
+        require('../../../assets/images/iphone-13-pink.png'),
         'Iphone 14 pro max 256GB',
         1099,
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
@@ -51,7 +50,7 @@ const rows = [
         '0'
     ),
     createData(
-        require('../../assets/images/iphone-13-pro-thumb-green.png'),
+        require('../../../assets/images/iphone-13-pro-thumb-green.png'),
         'Iphone 13 pro max 128GB',
         999,
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
@@ -240,12 +239,17 @@ EnhancedTableToolbar.propTypes = {
 // ========================= PAGE PRODUCT ======================== //
 
 const Products = () => {
+    const [visible, setvisible] = useState(false);
     const [order, setOrder] = useState('asc');
     const [orderBy, setOrderBy] = useState('calories');
     const [selected, setSelected] = useState([]);
     const [page, setPage] = useState(0);
     const [dense, setDense] = useState(false);
     const [rowsPerPage, setRowsPerPage] = useState(5);
+
+    useEffect(() => {
+        document.title = 'Admin | Tshop - Products';
+    }, []);
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -298,12 +302,12 @@ const Products = () => {
     const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
     return (
-        <ComponentSkeleton>
+        <ComponentSkeleton flexRow={true}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <MainCard title="All Products">
                         <Box sx={{ width: '100%', textAlign: 'right', marginBottom: '20px' }}>
-                            <Button variant="contained">
+                            <Button variant="contained" onClick={() => setvisible(true)}>
                                 Add Products&nbsp; <PlusCircleOutlined />
                             </Button>
                         </Box>
@@ -401,6 +405,7 @@ const Products = () => {
                     </MainCard>
                 </Grid>
             </Grid>
+            <AddProducts visible={visible} onClose={() => setvisible(false)} />
         </ComponentSkeleton>
     );
 };

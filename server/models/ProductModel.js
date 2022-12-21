@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const moment = require('moment')
 
 const ProductSchema = new mongoose.Schema({
     vendor_id: {
@@ -36,7 +37,10 @@ const ProductSchema = new mongoose.Schema({
     product_image: {
         type: Array,
         require: true
-    }
+    },
+    product_timestamp: {
+		type: String
+	},
 })
 
 const ProductModel = mongoose.model('Products', ProductSchema)

@@ -1,4 +1,5 @@
 const ProductModel = require('../models/ProductModel')
+const moment = require('moment')
 
 // ================================= ADD PRODUCT CONTROLLER ======================================= //
 exports.addProduct = async (req, res, next) => {
@@ -17,7 +18,8 @@ exports.addProduct = async (req, res, next) => {
 			product_sub_cate_id: req.body.product_sub_cate_id,
 			product_describe: req.body.product_describe,
 			product_manufacture_id: req.body.product_manufacture_id,
-			product_image: arrImage
+			product_image: arrImage,
+			product_timestamp: moment().format("MM/DD/YYYY hh:mm:ss")
 		})
 
         const product_data = await product.save()

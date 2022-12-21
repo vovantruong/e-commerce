@@ -9,7 +9,7 @@ import MainCard from 'components/MainCard';
 
 // ===============================|| COMPONENT - SKELETON ||=============================== //
 
-const ComponentSkeleton = ({ children }) => {
+const ComponentSkeleton = ({ children, flexRow }) => {
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(false);
@@ -33,18 +33,37 @@ const ComponentSkeleton = ({ children }) => {
         <>
             {isLoading && (
                 <Grid container spacing={3}>
-                    <Grid item xs={12} md={6}>
-                        {skeletonCard}
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        {skeletonCard}
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        {skeletonCard}
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        {skeletonCard}
-                    </Grid>
+                    {flexRow ? (
+                        <>
+                            <Grid item xs={12} md={12}>
+                                {skeletonCard}
+                            </Grid>
+                            <Grid item xs={12} md={12}>
+                                {skeletonCard}
+                            </Grid>
+                            <Grid item xs={12} md={12}>
+                                {skeletonCard}
+                            </Grid>
+                            <Grid item xs={12} md={12}>
+                                {skeletonCard}
+                            </Grid>
+                        </>
+                    ) : (
+                        <>
+                            <Grid item xs={12} md={6}>
+                                {skeletonCard}
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                {skeletonCard}
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                {skeletonCard}
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                {skeletonCard}
+                            </Grid>
+                        </>
+                    )}
                 </Grid>
             )}
             {!isLoading && children}

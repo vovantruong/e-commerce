@@ -2,14 +2,17 @@
 import Routes from 'routes';
 import ThemeCustomization from 'themes';
 import ScrollTop from 'components/ScrollTop';
+import GlobalStyle from 'styles/GlobalStyle';
 
 // ==============================|| APP - THEME, ROUTER, LOCAL  ||============================== //
 
 const App = () => (
     <ThemeCustomization>
-        <ScrollTop>
-            <Routes />
-        </ScrollTop>
+        <GlobalStyle>
+            <ScrollTop>
+                <Routes />
+            </ScrollTop>
+        </GlobalStyle>
     </ThemeCustomization>
 );
 

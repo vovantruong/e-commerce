@@ -17,10 +17,10 @@ const Shadow = Loadable(lazy(() => import('pages/components-overview/Shadow')));
 const AntIcons = Loadable(lazy(() => import('pages/components-overview/AntIcons')));
 
 // render - shop
-const Products = Loadable(lazy(() => import('pages/shops/Products')));
-const Category = Loadable(lazy(() => import('pages/shops/Category')));
-const SubCategory = Loadable(lazy(() => import('pages/shops/SubCategory')));
-const Manufactures = Loadable(lazy(() => import('pages/shops/Manufactures')));
+const Products = Loadable(lazy(() => import('pages/shops/Products/Products')));
+const Category = Loadable(lazy(() => import('pages/shops/Category/Category')));
+const SubCategory = Loadable(lazy(() => import('pages/shops/SubCategory/SubCategory')));
+const Manufactures = Loadable(lazy(() => import('pages/shops/Manufactures/Manufactures')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 

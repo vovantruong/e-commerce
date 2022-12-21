@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // material-ui
 import {
@@ -72,6 +72,10 @@ const status = [
 const DashboardDefault = () => {
     const [value, setValue] = useState('today');
     const [slot, setSlot] = useState('week');
+
+    useEffect(() => {
+        document.title = 'Admin | Tshop - Dashboard';
+    }, []);
 
     return (
         <Grid container rowSpacing={4.5} columnSpacing={2.75}>
