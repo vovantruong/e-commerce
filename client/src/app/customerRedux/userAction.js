@@ -5,7 +5,7 @@ import * as sendRequest from '~/utils/sendRequest'
 
 export const actionRegisterCustomer = createAsyncThunk('CUSTOMER_REGISTER', async (data, { rejectWithValue }) => {
 	try {
-		const res = await sendRequest.post('/auth/register', data)
+		const res = await sendRequest.post('/register', data)
 
 		if (res.success) {
 			toast.success(
@@ -32,11 +32,11 @@ export const actionRegisterCustomer = createAsyncThunk('CUSTOMER_REGISTER', asyn
 
 export const actionLoginCustomer = createAsyncThunk('CUSTOMER_LOGIN', async (data, { rejectWithValue }) => {
 	try {
-		const res = await sendRequest.post('/auth/login', data)
+		const res = await sendRequest.post('/login', data)
 
 		if (res.success) {
 			localStorage.setItem('tshop_access_token', JSON.stringify(res.access_token))
-			localStorage.setItem('tshop_customer', JSON.stringify(res.customer))
+			localStorage.setItem('tshop_customer', JSON.stringify(res.data))
 			toast.success('Login successfully', {
 				style: { textAlign: 'center' },
 			})

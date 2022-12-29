@@ -29,7 +29,7 @@ const customer = createSlice({
 		}
 	},
     extraReducers: {
-        // --------------------- login auth ---------------------- //
+        // --------------------- register auth ---------------------- //
 		[actionRegisterCustomer.pending]: (state) => {
 			state.loading = true
 			state.error = ''
@@ -52,7 +52,7 @@ const customer = createSlice({
 		[actionLoginCustomer.fulfilled]: (state, { payload }) => {
 			state.loading = false
 			state.token = payload.access_token
-			state.customer = payload.customer
+			state.customer = payload.data
 			state.message = payload.message
 			state.error = ''
 		},

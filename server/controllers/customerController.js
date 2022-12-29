@@ -36,7 +36,7 @@ exports.register = async (req, res, next) => {
 // ================================ LOGIN CONTROLLER ======================================= //
 exports.login = async (req, res, next) => {
 	const { email, password } = req.body
-
+	console.log(234);
 	if (!email || !password) {
 		return res.status(400).json({ success: false, message: 'Please provide an email or password' })
 	}
