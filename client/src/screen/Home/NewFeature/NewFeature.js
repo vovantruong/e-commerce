@@ -64,7 +64,7 @@ const NewFeature = () => {
 								<SwiperSlide key={i}>
 									<div className={cx('product-item')}>
 										<div className={cx('thumbnail')}>
-											<Link to="#" className={cx('thumbnail-img')}>
+											<Link to={`/product-detail/${item.id}`} className={cx('thumbnail-img')}>
 												<img src={item.product_img} alt="..." />
 											</Link>
 											{item.product_sale_off && item.product_sale_off !== '0' && (
@@ -75,7 +75,7 @@ const NewFeature = () => {
 										</div>
 										<div className={cx('content')}>
 											<h4 className={cx('title')}>
-												<Link to="#">{item.product_name}</Link>
+												<Link to={`/product-detail/${item.id}`}>{item.product_name}</Link>
 											</h4>
 											<div className={cx('price-variant')}>
 												<span className={cx('current-price')}>${item.product_price}</span>

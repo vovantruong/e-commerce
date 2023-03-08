@@ -71,7 +71,7 @@ const FLashDeals = ({ targetDate }) => {
 							<SwiperSlide key={i}>
 								<div className={cx('product-item')}>
 									<div className={cx('thumbnail')}>
-										<Link to="#" className={cx('thumbnail-img')}>
+										<Link to={`/product-detail/${item.id}`} className={cx('thumbnail-img')}>
 											<img src={item.product_img} alt="..." />
 										</Link>
 										{item.product_sale_off && item.product_sale_off !== '0' && (
@@ -85,7 +85,7 @@ const FLashDeals = ({ targetDate }) => {
 													</Link>
 												</li>
 												<li className={cx('add-to-cart')}>
-													<Link to="3">Add to cart</Link>
+													<button>Add to cart</button>
 												</li>
 												<li className={cx('quick-view')}>
 													<Link to="#">

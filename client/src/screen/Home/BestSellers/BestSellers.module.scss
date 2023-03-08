@@ -3,7 +3,7 @@
 .best-sellers {
 	padding-top: 80px;
 
-	@include mobile{
+	@include mobile {
 		padding-top: 50px;
 	}
 }
@@ -71,15 +71,22 @@
 }
 
 .wrap-item {
+	position: relative;
 	width: 25%;
 	margin-bottom: 50px;
 	padding: 0 15px;
 
-	@include tablet{
+	&:hover {
+		.content-title {
+			color: var(--color-primary);
+		}
+	}
+
+	@include tablet {
 		width: 50%;
 	}
-	
-	@include mobile{
+
+	@include mobile {
 		margin-bottom: 30px;
 		padding: 0 7px;
 	}
@@ -113,7 +120,7 @@
 	padding: 40px 20px 20px;
 	position: relative;
 
-	@include mobile{
+	@include mobile {
 		padding: 30px 15px 20px;
 	}
 }
@@ -150,6 +157,7 @@
 	border-radius: 50%;
 	transition: 0.3s;
 	box-shadow: 0 16px 32px 0 rgb(103 103 103 / 6%);
+	z-index: 1;
 
 	&:hover {
 		background-color: var(--color-primary);
@@ -158,7 +166,7 @@
 		box-shadow: 0 8px 16px 0 rgb(53 119 240 / 30%);
 	}
 
-	@include mobile{
+	@include mobile {
 		width: 35px;
 		height: 35px;
 		font-size: 14px;
@@ -177,7 +185,7 @@
 		color: var(--color-primary);
 	}
 
-	@include mobile{
+	@include mobile {
 		font-size: 15px;
 		margin-bottom: 0;
 	}
@@ -190,15 +198,15 @@
 		font-weight: 700;
 		color: var(--color-heading);
 
-		@include mobile{
+		@include mobile {
 			font-size: 12px;
 			line-height: 16px;
 		}
 	}
 
-    .current-price{
-        color: var(--color-pinterest);
-    }
+	.current-price {
+		color: var(--color-pinterest);
+	}
 
 	.old-price {
 		color: #d6d6d6;
@@ -210,7 +218,7 @@
 	margin-top: 10px;
 	font-size: 13px;
 
-	@include mobile{
+	@include mobile {
 		margin-top: 5px;
 		font-size: 12px;
 	}
@@ -222,6 +230,6 @@
 	.rating-number {
 		margin-left: 5px;
 		font-weight: 500;
-        color: #777777;
+		color: #777777;
 	}
 }

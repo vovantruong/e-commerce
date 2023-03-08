@@ -34,7 +34,7 @@ export const dataAllProduct = [
     },
     {
         id: 4,
-        product_name: 'Phone 13 ',
+        product_name: 'Iphone 13 ',
         product_img: require('../assets/product/iphone-13-pink.png'),
         product_price: '1049.99',
         product_old_price: '39.99',

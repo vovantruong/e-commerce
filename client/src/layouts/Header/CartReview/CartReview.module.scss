@@ -8,7 +8,7 @@
 
 .cart-wrap {
 	background-color: var(--color-white);
-	padding: 60px 50px;
+	padding: 30px;
 	width: 650px;
 	height: 100%;
 	display: flex;
@@ -52,8 +52,11 @@
 }
 
 .cart-body {
-	padding: 30px 0;
+	padding: 30px 20px;
 	flex: auto;
+	overflow: auto;
+
+	@include scrollbar();
 }
 
 .cart-item {
@@ -211,17 +214,17 @@
 
 	@include mobile {
 		flex-direction: column;
-        gap: 10px;
+		gap: 10px;
 
 		a {
 			width: 100%;
-            &::before{
-                content: unset !important
-            }
+			&::before {
+				content: unset !important;
+			}
 
-            &:active{
-                transform: scale(0.9)
-            }
+			&:active {
+				transform: scale(0.9);
+			}
 		}
 	}
 

@@ -1,7 +1,7 @@
 export const dataNavbar = [
 	{ name: 'Home', path: '/', children: [] },
 	{
-		name: 'Product', path: '/product',
+		name: 'Product', path: '/products',
 		children: [
 			{ name: 'Neon Sofa' },
 			{ name: 'Reading' },

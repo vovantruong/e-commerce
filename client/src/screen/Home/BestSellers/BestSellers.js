@@ -20,7 +20,6 @@ const BestSellers = () => {
 	const currentDataProducts = dataAllProduct.slice(indexOfFirstPage, indexOfLastPage)
 
 	useEffect(() => {
-		// Reset current page
 		setCurrentPage(1)
 	}, [dataAllProduct])
 
@@ -44,15 +43,15 @@ const BestSellers = () => {
 				<div className={cx('wrap-products')}>
 					{currentDataProducts.map((item, index) => (
 						<div className={cx('wrap-item')} key={index}>
-							<div className={cx('product-card')}>
+							<button className={cx('cart-btn')}>
+								<BsCart2 />
+							</button>
+							<Link to={`/product-detail/${item.id}`} className={cx('product-card')}>
 								<div className={cx('product-info')}>
-									<Link to={`/p-detail/${item.id}`} className={cx('cart-btn')}>
-										<BsCart2 />
-									</Link>
 									<div className={cx('content')}>
-										<Link to={`/p-detail/${item.id}`} className={cx('content-title')}>
+										<div className={cx('content-title')}>
 											{item.product_name}
-										</Link>
+										</div>
 										<div className={cx('content-variant')}>
 											<span className={cx('current-price')}>${item.product_price}</span>
 											{item.product_old_price && item.product_old_price !== '0' && (
@@ -74,11 +73,9 @@ const BestSellers = () => {
 									</div>
 								</div>
 								<div className={cx('product-thumbnail')}>
-									<Link to="#">
-										<img src={item.product_img} alt="..." />
-									</Link>
+									<img src={item.product_img} alt="..." />
 								</div>
-							</div>
+							</Link>
 						</div>
 					))}
 				</div>
