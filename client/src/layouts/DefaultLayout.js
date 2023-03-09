@@ -6,12 +6,12 @@ import Footer from './Footer/Footer'
 
 const cx = classNames.bind(styles)
 
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = ({ children, notFooter = false, notHeader = false }) => {
 	return (
 		<div className={cx('wrap-screen')}>
-			<Header />
+			{!notHeader && <Header />}
 			{children}
-			<Footer />
+			{!notFooter && <Footer />}
 		</div>
 	)
 }
