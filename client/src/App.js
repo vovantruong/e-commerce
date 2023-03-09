@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect, useLayoutEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
@@ -22,6 +22,10 @@ function App() {
 		},
 	}
 
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<BrowserRouter>
 			<ToastContainer {...settingToast} />
@@ -33,7 +37,7 @@ function App() {
 						let Layout = routes.layout ?? Fragment
 						return (
 							<Route
-								key={index}
+								key={routes.key}
 								path={routes.path}
 								element={
 									<Layout notHeader={routes?.notHeader} notFooter={routes?.notFooter}>

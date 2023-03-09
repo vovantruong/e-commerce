@@ -97,7 +97,7 @@ const FLashDeals = ({ targetDate }) => {
 									</div>
 									<div className={cx('content')}>
 										<h4 className={cx('title')}>
-											<Link to="#">{item.product_name}</Link>
+											<Link to={`/product-detail/${item.id}`}>{item.product_name}</Link>
 										</h4>
 										<div className={cx('price-variant')}>
 											<span className={cx('current-price')}>${item.product_price}</span>

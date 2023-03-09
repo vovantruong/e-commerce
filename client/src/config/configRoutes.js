@@ -5,7 +5,7 @@ export const configRoutes = {
     login: "/login",
     register: "/register",
     forgotpassword: "/forgotpassword",
-    product: '/products',
+    products: '/products',
     productDetail: '/product-detail/:id',
     contact: '/contact',
     blog: '/blog',

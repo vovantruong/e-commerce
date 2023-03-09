@@ -62,7 +62,7 @@ const Header = () => {
 
 	function renderHeaderTop() {
 		return (
-			<div className={cx('header-top')}>
+			<div className={cx('header-top')} style={scroll ? { marginBottom: 90 } : {}}>
 				<div className="container">
 					<div className={cx('wrap__header-top')}>
 						<div className={cx('header-top__dropdown')}>

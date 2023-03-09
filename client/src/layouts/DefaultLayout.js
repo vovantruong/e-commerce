@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import classNames from 'classnames/bind'
 import styles from './DefaultLayout.module.scss'
 import Header from './Header/Header'

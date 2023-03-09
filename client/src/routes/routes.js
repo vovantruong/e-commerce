@@ -15,17 +15,17 @@ import Cart from '~/screen/Cart/Cart'
 import MyAccount from '~/screen/MyAccount/MyAccount'
 
 const customerRoutes = [
-	{ path: configRoutes.login, components: Login, layout: null },
-	{ path: configRoutes.register, components: Register, layout: null },
-	{ path: configRoutes.home, components: Home, layout: DefaultLayout },
-	{ path: configRoutes.product, components: Product, layout: DefaultLayout },
-	{ path: configRoutes.productDetail, components: ProductDetail, layout: DefaultLayout },
-	{ path: configRoutes.contact, components: Contact, layout: DefaultLayout },
-	{ path: configRoutes.blog, components: Blog, layout: DefaultLayout },
-	{ path: configRoutes.about, components: AboutUs, layout: DefaultLayout },
-	{ path: configRoutes.wishlist, components: WishList, layout: DefaultLayout },
-	{ path: configRoutes.cart, components: Cart, layout: DefaultLayout },
-	{ path: configRoutes.account, components: MyAccount, layout: DefaultLayout, protected: true },
+	{ key: "login", path: configRoutes.login, components: Login, layout: null },
+	{ key: "register", path: configRoutes.register, components: Register, layout: null },
+	{ key: "home", path: configRoutes.home, components: Home, layout: DefaultLayout },
+	{ key: "products", path: configRoutes.products, components: Product, layout: DefaultLayout },
+	{ key: "productDetail", path: configRoutes.productDetail, components: ProductDetail, layout: DefaultLayout },
+	{ key: "contact", path: configRoutes.contact, components: Contact, layout: DefaultLayout },
+	{ key: "blog", path: configRoutes.blog, components: Blog, layout: DefaultLayout },
+	{ key: "about", path: configRoutes.about, components: AboutUs, layout: DefaultLayout },
+	{ key: "wishlist", path: configRoutes.wishlist, components: WishList, layout: DefaultLayout },
+	{ key: "cart", path: configRoutes.cart, components: Cart, layout: DefaultLayout },
+	{ key: "account", path: configRoutes.account, components: MyAccount, layout: DefaultLayout, protected: true },
 ]
 
 export { customerRoutes }

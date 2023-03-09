@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useLayoutEffect, useContext } from 'react'
 import classNames from 'classnames/bind'
 import styles from './ProductDetail.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Thumbs } from 'swiper'
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs'
+import { MediaQueryContext } from '~/context/MediaQueryContext'
 
 
 const cx = classNames.bind(styles)
@@ -11,13 +12,23 @@ const cx = classNames.bind(styles)
 const ProductDetail = () => {
 	const [activeThumb, setActiveThumb] = useState()
 
+	const isBreakPoint = useContext(MediaQueryContext)
+
 	const swiperRef = useRef()
+
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	return (
 		<div className={cx('detail-area')}>
 			<div className="container">
+				<div className={cx("wrap-head")}>
+					<h2 className={cx("product-title")}>Ella Everyday Tote</h2>
+				</div>
 				<div className={cx('wrapper')}>
-					<div className={cx('wrap-block')}>
+					<div className={cx('wrap-block', isBreakPoint.mobile ? '' : 'sticky-top')}>
+						{/* <div className={cx('sticky-top')}> */}
 						<Swiper
 							ref={swiperRef}
 							loop={true}
@@ -75,9 +86,15 @@ const ProductDetail = () => {
 								</div>
 							</SwiperSlide>
 						</Swiper>
+						{/* </div> */}
 					</div>
 					<div className={cx('wrap-block')}>
-						<div className={cx('content')}>Product Detail</div>
+						<div className={cx('content')}>
+							<h3 className={cx("product-variant")}>
+								<span className={cx('current-price')}>$1000</span>
+								<span className={cx('old-price')}>$1500</span>
+							</h3>
+						</div>
 					</div>
 				</div>
 			</div>
