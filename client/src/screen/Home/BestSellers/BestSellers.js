@@ -12,7 +12,7 @@ const cx = classNames.bind(styles)
 
 const BestSellers = () => {
 	const [currentPage, setCurrentPage] = useState(1)
-	const [perPage] = useState(8)
+	const [perPage] = useState(8) // Total 
 
 	// --------------------- Pagination page -------------------- //
 	const indexOfLastPage = currentPage * perPage
@@ -43,9 +43,9 @@ const BestSellers = () => {
 				<div className={cx('wrap-products')}>
 					{currentDataProducts.map((item, index) => (
 						<div className={cx('wrap-item')} key={index}>
-							<button className={cx('cart-btn')}>
+							<Link to={`/product-detail/${item.id}`} className={cx('cart-btn')}>
 								<BsCart2 />
-							</button>
+							</Link>
 							<Link to={`/product-detail/${item.id}`} className={cx('product-card')}>
 								<div className={cx('product-info')}>
 									<div className={cx('content')}>
