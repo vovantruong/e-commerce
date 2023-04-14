@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Login.module.scss'
 import Logo from '../../assets/logo-text.png'
@@ -13,10 +13,12 @@ import { clearError } from '~/app/customerRedux/userSlice'
 import CircularProgress from '@mui/material/CircularProgress'
 import Alert from '@mui/material/Alert'
 import { toast } from 'react-toastify'
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
 const cx = classNames.bind(styles)
 
 const Login = () => {
+	const [visible, setVisible] = useState(false)
 	const isBreakPoint = useContext(MediaQueryContext)
 
 	const dispatch = useDispatch()
@@ -94,8 +96,9 @@ const Login = () => {
 							{errors.email && <span className={cx('valid-error-message')}>{errors.email.message}</span>}
 						</div>
 						<div className={cx('form-group', { 'valid-error-check': errors.password })}>
-							<input id="pass" type="password" className={cx('form-control')} {...register('password')} />
+							<input id="pass" type={visible ? "text" : "password"} className={cx('form-control')} {...register('password')} />
 							<label htmlFor="pass">Password</label>
+							<button type='button' className={cx('eye-icon')} onClick={() => setVisible(!visible)}>{visible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}</button>
 							{errors.password && (
 								<span className={cx('valid-error-message')}>{errors.password.message}</span>
 							)}

@@ -206,6 +206,13 @@
 			padding: 0 15px;
 		}
 	}
+	.eye-icon {
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translate(0, -50%);
+		font-size: 18px;
+	}
 }
 
 .form-btn {

@@ -20,7 +20,7 @@ const ModalConfirm = ({
 	message = '',
 	type = 'question',
 	closeIcon = true,
-    loading=false,
+	loading = false,
 	children,
 }) => {
 
@@ -107,13 +107,13 @@ const ModalConfirm = ({
 											)}
 											onClick={onCloseModal}
 										>
-											關閉
+											No
 										</button>
 									</>
 								)}
 								{type === 'error' && (
 									<button className={cx('close-control')} onClick={onCloseModal}>
-										關閉
+										No
 									</button>
 								)}
 							</div>
