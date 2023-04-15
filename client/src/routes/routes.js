@@ -15,8 +15,8 @@ import Cart from '~/screen/Cart/Cart'
 import MyAccount from '~/screen/MyAccount/MyAccount'
 
 const customerRoutes = [
-	{ key: "login", path: configRoutes.login, components: Login, layout: null },
-	{ key: "register", path: configRoutes.register, components: Register, layout: null },
+	{ key: "login", path: configRoutes.login, components: Login },
+	{ key: "register", path: configRoutes.register, components: Register },
 	{ key: "home", path: configRoutes.home, components: Home, layout: DefaultLayout },
 	{ key: "products", path: configRoutes.products, components: Product, layout: DefaultLayout },
 	{ key: "productDetail", path: configRoutes.productDetail, components: ProductDetail, layout: DefaultLayout },

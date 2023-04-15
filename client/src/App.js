@@ -40,7 +40,7 @@ function App() {
 								key={routes.key}
 								path={routes.path}
 								element={
-									<Layout notHeader={routes?.notHeader} notFooter={routes?.notFooter}>
+									<Layout>
 										{routes.protected ? (
 											<ProtectedRoute>
 												<Page />
