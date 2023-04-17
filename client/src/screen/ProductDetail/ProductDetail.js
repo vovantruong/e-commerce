@@ -14,10 +14,9 @@ const cx = classNames.bind(styles)
 const ProductDetail = () => {
 	const isBreakPoint = useContext(MediaQueryContext)
 	const { pathname } = useLocation();
-	const cateProduct = pathname.split('/').filter(Boolean)[0];
-	const idProduct = pathname.split('/').filter(Boolean)[1];
-
-	console.log({ cateProduct, idProduct });
+	const keyParam = pathname.split('/').filter(Boolean)
+	const cateProduct = keyParam[0];
+	const idProduct = keyParam[1];
 
 	useLayoutEffect(() => {
 		window.scrollTo(0, 0);

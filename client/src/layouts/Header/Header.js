@@ -20,8 +20,8 @@ import Tooltip from '@mui/material/Tooltip'
 
 const cx = classNames.bind(styles)
 
-const dataLanguage = ['English', 'Vietnamese', 'Chinese', 'Japanese']
-const dataCurrency = ['USD', 'AUD', 'EUR', 'VND']
+const dataLanguage = ['English', 'Vietnamese']
+const dataCurrency = ['USD', 'EUR', 'VND']
 
 const dataOffer = [
 	{
@@ -71,18 +71,18 @@ const Header = () => {
 								itemClassName={cx('dropdown-item')}
 								titleClassName={cx('dropdown-title')}
 								selectedClassName={cx('dropdown-selected')}
-								value={language}
-								setValue={setLanguage}
-								options={dataLanguage}
+								value={currency}
+								setValue={setCurrency}
+								options={dataCurrency}
 							/>
 							<Dropdown
 								className={cx('dropdown-menu')}
 								itemClassName={cx('dropdown-item')}
 								titleClassName={cx('dropdown-title')}
 								selectedClassName={cx('dropdown-selected')}
-								value={currency}
-								setValue={setCurrency}
-								options={dataCurrency}
+								value={language}
+								setValue={setLanguage}
+								options={dataLanguage}
 							/>
 						</div>
 						<div className={cx('header-top__links')}>

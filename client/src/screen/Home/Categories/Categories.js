@@ -71,7 +71,7 @@ const Categories = () => {
 							{dataCategories.map((item, i) => (
 								<SwiperSlide key={i} className={cx('slide-item')}>
 									<div className={cx('categories-product')}>
-										<Link className={cx('link')} to={`/products?categories=${item.cate_id}`}>
+										<Link className={cx('link')} to={`/products?categories=${item.cate_slug}`}>
 											<img className={cx('cat-img')} src={item.cate_image} alt="..." />
 											<h6 className={cx('cat-title')}>{item.cate_name}</h6>
 										</Link>
