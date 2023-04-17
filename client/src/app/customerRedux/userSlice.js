@@ -2,17 +2,17 @@ import { createSlice } from '@reduxjs/toolkit'
 import { actionRegisterCustomer, actionLoginCustomer } from './userAction'
 
 const initialState = {
-    loading: false,
-    token: JSON.parse(localStorage.getItem('tshop_access_token')) ?? '',
-    customer: JSON.parse(localStorage.getItem('tshop_customer')) ?? '',
-    error: '',
-    message: ''
+	loading: false,
+	token: JSON.parse(localStorage.getItem('tshop_access_token')) ?? '',
+	customer: JSON.parse(localStorage.getItem('tshop_customer')) ?? '',
+	error: '',
+	message: ''
 }
 
 const customer = createSlice({
-    name: 'customer',
-    initialState,
-    reducers: {
+	name: 'customer',
+	initialState,
+	reducers: {
 		clearError: (state) => {
 			state.loading = false
 			state.message = ''
@@ -28,8 +28,8 @@ const customer = createSlice({
 			state.error = ''
 		}
 	},
-    extraReducers: {
-        // --------------------- register auth ---------------------- //
+	extraReducers: {
+		// --------------------- register auth ---------------------- //
 		[actionRegisterCustomer.pending]: (state) => {
 			state.loading = true
 			state.error = ''
@@ -60,7 +60,7 @@ const customer = createSlice({
 			state.loading = false
 			state.error = payload
 		},
-    }
+	}
 })
 
 export const { clearError, actionLogout } = customer.actions

@@ -1,7 +1,7 @@
 @import '../../../styles/app.scss';
 
-.feature-area{
-    padding-bottom: 50px;
+.feature-area {
+	padding-bottom: 50px;
 }
 
 .head-wrap {
@@ -10,11 +10,11 @@
 	align-items: flex-end;
 	justify-content: space-between;
 
-    @include mobile{
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+	@include mobile {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
 }
 
 .title-box {
@@ -45,12 +45,11 @@
 
 			svg {
 				font-size: 16px;
-                @include mobile{
-                font-size: 14px;    
-                }
+				@include mobile {
+					font-size: 14px;
+				}
 			}
 		}
-
 	}
 
 	.title {
@@ -58,9 +57,9 @@
 		line-height: 1.1;
 		font-weight: 700;
 
-        @include mobile{
-            font-size: 26px;
-        }
+		@include mobile {
+			font-size: 26px;
+		}
 	}
 }
 
@@ -89,7 +88,6 @@
 		@include mobile {
 			width: 40px;
 			height: 40px;
-
 		}
 	}
 }
@@ -107,9 +105,9 @@
 	}
 }
 
-.thumbnail{
-    position: relative;
-    display: block;
+.thumbnail {
+	position: relative;
+	display: block;
 }
 
 .thumbnail-img {
@@ -121,8 +119,8 @@
 	overflow: hidden;
 	position: relative;
 	border-radius: 50%;
-    background-color: #f6f7fb;
-    margin: 0 auto;
+	background-color: #f6f7fb;
+	margin: 0 auto;
 
 	img {
 		border-radius: 6px;
@@ -130,14 +128,14 @@
 		transition: 0.3s;
 	}
 
-    @include tablet{
-        width: 245px;
-        height: 245px;
-    }
+	@include tablet {
+		width: 245px;
+		height: 245px;
+	}
 }
 
-.thumbnail-badget{
-    position: absolute;
+.thumbnail-badget {
+	position: absolute;
 	top: 20px;
 	right: 10px;
 	z-index: 2;
@@ -184,7 +182,7 @@
 			color: var(--color-heading);
 		}
 
-		.current-price{
+		.current-price {
 			color: var(--color-heading);
 		}
 
@@ -199,7 +197,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    margin: 10px 0;
+	margin: 10px 0;
 
 	li {
 		margin: 5px;

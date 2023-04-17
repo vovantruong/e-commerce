@@ -22,7 +22,7 @@ export const actionRegisterCustomer = createAsyncThunk('CUSTOMER_REGISTER', asyn
 			return rejectWithValue(res.message)
 		}
 	} catch (error) {
-		if (error.response && error.response.data.message) {
+		if (error.response && error.response.data?.message) {
 			return rejectWithValue(error.response.data.message)
 		} else {
 			return rejectWithValue(error.message)
@@ -33,7 +33,6 @@ export const actionRegisterCustomer = createAsyncThunk('CUSTOMER_REGISTER', asyn
 export const actionLoginCustomer = createAsyncThunk('CUSTOMER_LOGIN', async (data, { rejectWithValue }) => {
 	try {
 		const res = await sendRequest.post('/login', data)
-
 		if (res.success) {
 			localStorage.setItem('tshop_access_token', JSON.stringify(res.access_token))
 			localStorage.setItem('tshop_customer', JSON.stringify(res.data))
@@ -45,10 +44,11 @@ export const actionLoginCustomer = createAsyncThunk('CUSTOMER_LOGIN', async (dat
 			return rejectWithValue(res.message)
 		}
 	} catch (error) {
-		if (error.response && error.response.data.message) {
+		if (error.response && error.response.data?.message) {
 			return rejectWithValue(error.response.data.message)
 		} else {
 			return rejectWithValue(error.message)
 		}
+
 	}
 })

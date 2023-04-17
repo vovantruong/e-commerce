@@ -6,7 +6,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { BsStar, BsStarFill, BsStarHalf, BsCart2 } from 'react-icons/bs'
 import { FiHeart } from 'react-icons/fi'
-import { dataProduct } from '~/constant/dataProduct'
+import { dataAllProduct } from '~/constant/dataAllProduct'
 
 const cx = classNames.bind(styles)
 const SearchBox = ({ className, visible, onClose }) => {
@@ -39,10 +39,10 @@ const SearchBox = ({ className, visible, onClose }) => {
 					</Link>
 				</div>
 				<ul className={cx('search-body__result')}>
-					{dataProduct.map((item, index) => (
+					{dataAllProduct.map((item, index) => (
 						<li className={cx('product-item')} key={index}>
 							<div className={cx('thumbnail')}>
-								<Link to="#" className={cx('thumbnail-link')}>
+								<Link onClick={onClose} to={`/${item.product_category}/${item.product_slug}`} className={cx('thumbnail-link')}>
 									<img className={cx('thumbnail-img')} src={item.product_img} alt="..." />
 								</Link>
 							</div>
@@ -63,7 +63,7 @@ const SearchBox = ({ className, visible, onClose }) => {
 									</span>
 								</div>
 								<h6 className={cx('product-title')}>
-									<Link to="#">{item.product_name}</Link>
+									<Link onClick={onClose} to={`/${item.product_category}/${item.product_slug}`}>{item.product_name}</Link>
 								</h6>
 								<div className={cx('product-price-variant')}>
 									<span className={cx('price', 'current-price')}>${item.product_price}</span>
@@ -72,12 +72,12 @@ const SearchBox = ({ className, visible, onClose }) => {
 									)}
 								</div>
 								<div className={cx('product-cart')}>
-									<Link to="#" className={cx('cart-btn')}>
+									<button to="#" className={cx('cart-btn')}>
 										<BsCart2 />
-									</Link>
-									<Link to="#" className={cx('cart-btn')}>
+									</button>
+									<button to="#" className={cx('cart-btn')}>
 										<FiHeart />
-									</Link>
+									</button>
 								</div>
 							</div>
 						</li>

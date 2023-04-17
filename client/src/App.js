@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useLayoutEffect } from 'react'
+import { Fragment, useEffect, useLayoutEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
@@ -6,6 +6,7 @@ import ProtectedRoute from './routes/ProtectedRoute'
 import { customerRoutes } from './routes/routes'
 
 function App() {
+
 	useEffect(() => {
 		document.title = 'Tshop - Online Solution'
 	}, [])

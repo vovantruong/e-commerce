@@ -49,7 +49,7 @@ const ExploreProduct = () => {
 							<div className={cx('wrap-item')} key={index}>
 								<div className={cx('product-card')}>
 									<div className={cx('product-thumbnail')}>
-										<Link to={`/product-detail/${item.id}`}>
+										<Link to={`/${item.product_category}/${item.product_slug}`}>
 											<img src={item.product_img} alt="..." />
 										</Link>
 									</div>
@@ -67,7 +67,7 @@ const ExploreProduct = () => {
 													className={cx('rating-number')}
 												>{`(${item.product_reviews})`}</span>
 											</div>
-											<Link to={`/product-detail/${item.id}`} className={cx('content-title')}>
+											<Link to={`/${item.product_category}/${item.product_slug}`} className={cx('content-title')}>
 												{item.product_name}
 											</Link>
 											<div className={cx('content-variant')}>
@@ -80,7 +80,7 @@ const ExploreProduct = () => {
 											</div>
 										</div>
 										<div className={cx('add-to-cart')}>
-											<Link to="3">Add to cart</Link>
+											<Link to="">Add to cart</Link>
 										</div>
 									</div>
 								</div>

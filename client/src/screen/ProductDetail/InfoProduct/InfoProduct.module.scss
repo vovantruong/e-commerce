@@ -1,0 +1,22 @@
+@import '../../../styles/app.scss';
+
+.wrap-price {
+	display: flex;
+	align-items: center;
+	padding: 15px 0;
+}
+
+.current-price {
+	font-weight: 700;
+	color: #cb1c22;
+	margin-right: 10px;
+	font-size: 35px;
+	line-height: 1;
+}
+
+.old-price {
+	font-weight: 400;
+	color: #99a2aa;
+	font-size: 20px;
+	line-height: 1;
+}

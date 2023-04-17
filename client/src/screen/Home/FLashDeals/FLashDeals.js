@@ -6,7 +6,7 @@ import { RiShoppingBasketFill } from 'react-icons/ri'
 import { FiHeart } from 'react-icons/fi'
 import { ImEye } from 'react-icons/im'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { dataProduct } from '~/constant/dataProduct'
+import { dataAllProduct } from '~/constant/dataAllProduct'
 import { Link } from 'react-router-dom'
 import ShowCountdown from '~/components/ShowCountdown/ShowCountdown'
 
@@ -67,11 +67,11 @@ const FLashDeals = ({ targetDate }) => {
 							},
 						}}
 					>
-						{dataProduct.map((item, i) => (
+						{dataAllProduct.map((item, i) => (
 							<SwiperSlide key={i}>
 								<div className={cx('product-item')}>
 									<div className={cx('thumbnail')}>
-										<Link to={`/product-detail/${item.id}`} className={cx('thumbnail-img')}>
+										<Link to={`/${item.product_category}/${item.product_slug}`} className={cx('thumbnail-img')}>
 											<img src={item.product_img} alt="..." />
 										</Link>
 										{item.product_sale_off && item.product_sale_off !== '0' && (
@@ -97,7 +97,7 @@ const FLashDeals = ({ targetDate }) => {
 									</div>
 									<div className={cx('content')}>
 										<h4 className={cx('title')}>
-											<Link to={`/product-detail/${item.id}`}>{item.product_name}</Link>
+											<Link to={`/${item.product_category}/${item.product_slug}`}>{item.product_name}</Link>
 										</h4>
 										<div className={cx('price-variant')}>
 											<span className={cx('current-price')}>${item.product_price}</span>

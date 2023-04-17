@@ -4,7 +4,7 @@ import styles from './NewFeature.module.scss'
 import { HiOutlineArrowNarrowLeft, HiOutlineArrowNarrowRight } from 'react-icons/hi'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { BsCart } from 'react-icons/bs'
-import { dataProduct } from '~/constant/dataProduct'
+import { dataAllProduct } from '~/constant/dataAllProduct'
 import { Link } from 'react-router-dom'
 import { FiHeart } from 'react-icons/fi'
 import { ImEye } from 'react-icons/im'
@@ -60,11 +60,11 @@ const NewFeature = () => {
 								},
 							}}
 						>
-							{dataProduct.map((item, i) => (
+							{dataAllProduct.map((item, i) => (
 								<SwiperSlide key={i}>
 									<div className={cx('product-item')}>
 										<div className={cx('thumbnail')}>
-											<Link to={`/product-detail/${item.id}`} className={cx('thumbnail-img')}>
+											<Link to={`/${item.product_category}/${item.product_slug}`} className={cx('thumbnail-img')}>
 												<img src={item.product_img} alt="..." />
 											</Link>
 											{item.product_sale_off && item.product_sale_off !== '0' && (
@@ -75,7 +75,7 @@ const NewFeature = () => {
 										</div>
 										<div className={cx('content')}>
 											<h4 className={cx('title')}>
-												<Link to={`/product-detail/${item.id}`}>{item.product_name}</Link>
+												<Link to={`/${item.product_category}/${item.product_slug}`}>{item.product_name}</Link>
 											</h4>
 											<div className={cx('price-variant')}>
 												<span className={cx('current-price')}>${item.product_price}</span>
@@ -91,10 +91,10 @@ const NewFeature = () => {
 													</Link>
 												</li>
 												<li className={cx('add-to-cart')}>
-													<Link to="3">Add to cart</Link>
+													<Link to="">Add to cart</Link>
 												</li>
 												<li className={cx('quick-view')}>
-													<Link to="#">
+													<Link to="">
 														<ImEye />
 													</Link>
 												</li>

@@ -43,10 +43,10 @@ const BestSellers = () => {
 				<div className={cx('wrap-products')}>
 					{currentDataProducts.map((item, index) => (
 						<div className={cx('wrap-item')} key={index}>
-							<Link to={`/product-detail/${item.id}`} className={cx('cart-btn')}>
+							<Link to={`/${item.product_category}/${item.product_slug}`} className={cx('cart-btn')}>
 								<BsCart2 />
 							</Link>
-							<Link to={`/product-detail/${item.id}`} className={cx('product-card')}>
+							<Link to={`/${item.product_category}/${item.product_slug}`} className={cx('product-card')}>
 								<div className={cx('product-info')}>
 									<div className={cx('content')}>
 										<div className={cx('content-title')}>
