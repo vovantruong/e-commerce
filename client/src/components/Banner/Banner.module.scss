@@ -1,4 +1,4 @@
-@import '../../../styles/app.scss';
+@import '../../styles/app.scss';
 
 .wrapper {
 	background: #f7f7f7;
@@ -13,7 +13,7 @@
 		padding: 30px 40px;
 	}
 
-	@include mobile{
+	@include mobile {
 		padding: 20px;
 	}
 
@@ -30,12 +30,12 @@
 		box-shadow: 15px 15px 55px 3px rgb(192 188 187 / 66%);
 		animation: bubble 1s ease-in infinite alternate;
 
-		@include tablet{
+		@include tablet {
 			height: 180px;
 			width: 180px;
 		}
 
-		@include mobile{
+		@include mobile {
 			width: 150px;
 			height: 150px;
 			top: 5%;
@@ -58,12 +58,12 @@
 		box-shadow: 0 0 25px 10px rgb(0 0 0 / 30%);
 		animation: shadow 1s ease-in infinite alternate;
 
-		@include tablet{
+		@include tablet {
 			top: calc(20% + 210px + 25px);
 			left: calc(15% + 90px);
 		}
 
-		@include mobile{
+		@include mobile {
 			width: 20px;
 			height: 20px;
 			top: calc(5% + 150px + 25px);
@@ -90,7 +90,6 @@
 		}
 		85% {
 			width: 10px;
-			
 		}
 		100% {
 			width: 3px;
@@ -108,7 +107,7 @@
 	padding: 30px 15px;
 	z-index: 9;
 
-	@include mobile{
+	@include mobile {
 		flex-direction: column;
 		gap: 20px;
 	}
@@ -157,7 +156,7 @@
 			font-size: 44px;
 		}
 
-		@include mobile{
+		@include mobile {
 			font-size: 35px;
 			margin-bottom: 40px;
 		}
@@ -175,7 +174,7 @@
 			color: var(--color-secondary);
 		}
 
-		@include mobile{
+		@include mobile {
 			padding: 12px 25px;
 			font-size: 14px;
 		}
@@ -202,7 +201,7 @@
 		}
 	}
 
-	@include mobile{
+	@include mobile {
 		margin-left: 0;
 	}
 }

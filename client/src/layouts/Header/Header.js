@@ -17,6 +17,7 @@ import Sidebar from './Sidebar/Sidebar'
 import CartReview from './CartReview/CartReview'
 import { useSelector } from 'react-redux'
 import Tooltip from '@mui/material/Tooltip'
+import Submenu from './Submenu/Submenu'
 
 const cx = classNames.bind(styles)
 
@@ -43,6 +44,7 @@ const Header = () => {
 	const [visibleSearchBox, setVisibleSearchBox] = useState(false)
 	const [visibleSidebar, setVisibleSidebar] = useState(false)
 	const [visibleCartReview, setVisibleCartReview] = useState(false)
+	const [visibleSubmenu, setVisibleSubmenu] = useState(false);
 
 	const { token } = useSelector((state) => state.customer)
 
@@ -103,19 +105,24 @@ const Header = () => {
 			<nav className={cx('navbar-nav')}>
 				<ul className={cx('nav-menu')}>
 					{dataNavbar?.map((item, i) => (
-						<li key={i} className={cx('nav-menu__item')}>
+						<li key={i}
+							className={cx('nav-menu__item')}
+							onMouseOver={() => item.children?.length > 0 && setVisibleSubmenu(true)}
+							onMouseOut={() => item.children?.length > 0 && setVisibleSubmenu(false)}
+						>
 							<NavLink
-								className={({ isActive }) => (isActive ? cx('active-link') : '')}
+								className={({ isActive }) => (isActive ? cx('active-link', 'menu-txt') : cx('menu-txt'))}
 								to={item.path}
 								end={item.path === '/' ? true : false}
 							>
 								{item.name}
 							</NavLink>
 							{item.children?.length > 0 && <VscChevronDown className={cx('arrow')} />}
+							{item.children?.length > 0 && <Submenu children={item.children} visible={visibleSubmenu} setVisible={setVisibleSubmenu} />}
 						</li>
 					))}
 				</ul>
-			</nav>
+			</nav >
 		)
 	}
 

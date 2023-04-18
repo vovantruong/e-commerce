@@ -1,0 +1,163 @@
+@import '../../styles/app.scss';
+
+.pd-card.type__1 {
+	position: relative;
+	width: 25%;
+	margin-bottom: 50px;
+	padding: 0 15px;
+
+	&:hover .pd-title {
+		color: var(--color-primary);
+	}
+
+	@include tablet {
+		width: 50%;
+	}
+
+	@include mobile {
+		margin-bottom: 30px;
+		padding: 0 7px;
+	}
+
+	.btn-add-cart {
+		position: absolute;
+		top: -20px;
+		right: 20px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 50px;
+		width: 50px;
+		background-color: var(--color-lighter);
+		border: 2px solid var(--color-white);
+		color: var(--color-heading);
+		font-size: 20px;
+		border-radius: 50%;
+		transition: 0.3s;
+		box-shadow: 0 16px 32px 0 rgb(103 103 103 / 6%);
+		z-index: 1;
+
+		&:hover {
+			background-color: var(--color-primary);
+			border-color: var(--color-primary);
+			color: var(--color-white);
+			box-shadow: 0 8px 16px 0 rgb(53 119 240 / 30%);
+		}
+
+		@include mobile {
+			width: 35px;
+			height: 35px;
+			font-size: 14px;
+		}
+	}
+
+	.card-content {
+		position: relative;
+
+		&::before {
+			content: '';
+			height: 70%;
+			width: 100%;
+			background-color: #f7f7f7;
+			border-radius: 6px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			transition: 0.3s;
+		}
+
+		&:hover {
+			.pd-thumbnail img {
+				transform: scale(0.9);
+			}
+		}
+	}
+
+	.card-info {
+		margin: 0;
+		padding: 40px 20px 20px;
+		position: relative;
+
+		@include mobile {
+			padding: 30px 15px 20px;
+		}
+	}
+
+	.pd-title {
+		display: block;
+		font-size: 20px;
+		color: var(--color-heading);
+		font-weight: 600;
+		margin-bottom: 10px;
+		transition: all 0.3s;
+
+		&:hover {
+			color: var(--color-primary);
+		}
+
+		@include mobile {
+			font-size: 15px;
+			margin-bottom: 0;
+		}
+	}
+
+	.pd-price {
+		span {
+			font-size: 16px;
+			margin-right: 8px;
+			font-weight: 700;
+			color: var(--color-heading);
+
+			@include mobile {
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
+
+		.current {
+			color: var(--color-pinterest);
+		}
+
+		.old {
+			color: #d6d6d6;
+			text-decoration: line-through;
+		}
+	}
+
+	.pd-rating {
+		margin-top: 10px;
+		font-size: 13px;
+
+		@include mobile {
+			margin-top: 5px;
+			font-size: 12px;
+		}
+
+		.rating-icon {
+			color: #ffdc60;
+		}
+
+		.rating-number {
+			margin-left: 5px;
+			font-weight: 500;
+			color: #777777;
+		}
+	}
+
+	.pd-thumbnail {
+		position: relative;
+		display: block;
+		width: 80%;
+		margin: 0 auto;
+
+		a {
+			display: block;
+		}
+
+		img {
+			border-radius: 6px;
+			transition: all 0.3s;
+		}
+	}
+}

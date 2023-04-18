@@ -1,7 +1,7 @@
 @import '../../styles/app.scss';
 
-.main-menu{
-	transition: all .3s;
+.main-menu {
+	transition: all 0.3s;
 }
 
 .header-top {
@@ -10,20 +10,20 @@
 	padding: 6px 0;
 }
 
-.sticky-header{
+.sticky-header {
 	position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
+	top: 0;
+	right: 0;
+	left: 0;
 	padding: 5px 0;
-    z-index: 10;
-    background-color: var(--color-white);
-    box-shadow: 0 2px 20px 5px rgba(0,0,0,0.2);
-    transition: all .3s;
-	animation: scroll-sticky .5s forwards;
+	z-index: 10;
+	background-color: var(--color-white);
+	box-shadow: 0 2px 20px 5px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s;
+	animation: scroll-sticky 0.5s forwards;
 
 	.nav-menu__item > a {
-		&::before{
+		&::before {
 			bottom: 23px;
 			height: 3px;
 		}
@@ -31,15 +31,15 @@
 }
 
 @keyframes scroll-sticky {
-	0%{
+	0% {
 		top: 15px;
 		opacity: 0;
 	}
-	50%{
+	50% {
 		top: -10px;
 		opacity: 1;
 	}
-	100%{
+	100% {
 		top: 0;
 		opacity: 1;
 	}
@@ -84,10 +84,10 @@
 	}
 }
 
-.dropdown-title{
+.dropdown-title {
 	font-size: 16px;
 
-	@include mobile{
+	@include mobile {
 		font-size: 14px;
 	}
 }
@@ -146,10 +146,6 @@
 	}
 }
 
-.navbar-action{
-	
-}
-
 .navbar-nav {
 	margin: 0 20px;
 	flex: 1;
@@ -163,14 +159,15 @@
 }
 
 .nav-menu__item {
+	position: relative;
 	margin: 0 18px;
 	display: flex;
 	align-items: center;
 
-	a {
+	.menu-txt {
 		color: var(--color-heading);
 		font-weight: 700;
-		font-size: 15px;
+		font-size: 16px;
 		line-height: 80px;
 		height: 80px;
 		display: block;
@@ -178,9 +175,9 @@
 
 		&::before {
 			content: '';
-			height: 2px;
+			height: 3px;
 			width: 0;
-			background: #000;
+			background: var(--color-primary);
 			position: absolute;
 			bottom: 27px;
 			left: 0;
@@ -189,6 +186,7 @@
 		}
 
 		&:hover {
+			color: var(--color-primary);
 			&::before {
 				opacity: 1;
 				width: 100%;
@@ -197,6 +195,7 @@
 	}
 
 	.active-link {
+		color: var(--color-primary);
 		&::before {
 			width: 100%;
 			opacity: 1;
@@ -204,7 +203,7 @@
 	}
 
 	.arrow {
-		color: #c6c6c6;
+		color: #908f8f;
 		font-weight: 400;
 		font-size: 18px;
 	}
@@ -340,7 +339,7 @@
 		width: 33.33%;
 		text-align: center;
 
-		@include desktop{
+		@include desktop {
 			width: 100%;
 		}
 	}
@@ -352,45 +351,45 @@
 			font-size: 16px;
 			font-weight: 700;
 
-			@include mobile{
+			@include mobile {
 				font-size: 12px;
 			}
 		}
 
-		a{
+		a {
 			text-decoration: underline;
-			transition: all .3s;
+			transition: all 0.3s;
 
-			&:hover{
+			&:hover {
 				color: var(--color-secondary);
 			}
 		}
 	}
 
-	.navigation{
+	.navigation {
 		width: 33.33%;
-		color: rgba(255,255,255,.8);
+		color: rgba(255, 255, 255, 0.8);
 		font-size: 22px;
-		transition: all .3s;
+		transition: all 0.3s;
 		padding: 0 10px;
 
-		@include tablet{
+		@include tablet {
 			width: unset;
 			font-size: 16px;
 		}
 	}
 
-	.next{
+	.next {
 		text-align: left;
 
-		&:hover{
+		&:hover {
 			transform: translateX(7px);
 		}
 	}
 
-	.previous{
+	.previous {
 		text-align: right;
-		&:hover{
+		&:hover {
 			transform: translateX(-7px);
 		}
 	}

@@ -7,6 +7,7 @@ import { BsCart2 } from 'react-icons/bs'
 import { FaStar } from 'react-icons/fa'
 import { dataAllProduct } from '~/constant/dataAllProduct'
 import Pagination from '~/components/Pagination/Pagination'
+import CardProduct from '~/components/CardProduct/CardProduct'
 
 const cx = classNames.bind(styles)
 
@@ -41,43 +42,11 @@ const BestSellers = () => {
 					<h2 className={cx('title')}>Best Sellers</h2>
 				</div>
 				<div className={cx('wrap-products')}>
-					{currentDataProducts.map((item, index) => (
-						<div className={cx('wrap-item')} key={index}>
-							<Link to={`/${item.product_category}/${item.product_slug}`} className={cx('cart-btn')}>
-								<BsCart2 />
-							</Link>
-							<Link to={`/${item.product_category}/${item.product_slug}`} className={cx('product-card')}>
-								<div className={cx('product-info')}>
-									<div className={cx('content')}>
-										<div className={cx('content-title')}>
-											{item.product_name}
-										</div>
-										<div className={cx('content-variant')}>
-											<span className={cx('current-price')}>${item.product_price}</span>
-											{item.product_old_price && item.product_old_price !== '0' && (
-												<span className={cx('price', 'old-price')}>
-													${item.product_old_price}
-												</span>
-											)}
-										</div>
-										<div className={cx('content-rating')}>
-											<span className={cx('rating-icon')}>
-												<FaStar />
-												<FaStar />
-												<FaStar />
-												<FaStar />
-												<FaStar />
-											</span>
-											<span className={cx('rating-number')}>{`(${item.product_reviews})`}</span>
-										</div>
-									</div>
-								</div>
-								<div className={cx('product-thumbnail')}>
-									<img src={item.product_img} alt="..." />
-								</div>
-							</Link>
-						</div>
-					))}
+					{
+						currentDataProducts.map((item, key) => (
+							<CardProduct data={item} key={key} type={1} />
+						))
+					}
 				</div>
 				<Pagination handlePageClick={handleChangePage} data={dataAllProduct} totalPage={perPage} />
 			</div>

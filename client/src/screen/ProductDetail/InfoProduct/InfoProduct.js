@@ -13,7 +13,9 @@ const InforProduct = () => {
                 <div className={cx('old-price')}><strike>$1,500</strike></div>
             </div>
             <div className={cx('wrap-select')}>
-                <Link to="?options=128gb">128</Link>
+                <Link to="?options=128gb">
+
+                </Link>
             </div>
         </div>
     )

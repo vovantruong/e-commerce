@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames/bind'
 import styles from './Home.module.scss'
 
-import Banner from './Banner/Banner'
+import Banner from '../../components/Banner/Banner'
 import BestSellers from './BestSellers/BestSellers'
 import NewFeature from './NewFeature/NewFeature'
 import Categories from './Categories/Categories'
@@ -29,9 +29,9 @@ const Home = () => {
 		<div className={cx('home-page')}>
 			<Banner />
 			<Categories />
-			<Countdown targetDate={dateTimeAfterThreeDays}/>
+			<Countdown targetDate={dateTimeAfterThreeDays} />
 			<BestSellers />
-			<FLashDeals targetDate={dateTimeAfterOneDays}/>
+			<FLashDeals targetDate={dateTimeAfterOneDays} />
 			<WhyChose />
 			<NewFeature />
 			<Feedback />

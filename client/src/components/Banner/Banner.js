@@ -12,15 +12,15 @@ const cx = classNames.bind(styles)
 const data = [
 	{
 		name: 'Roco wireless Headphone',
-		image: require('../../../assets/mock-product/product-16-banner.png'),
+		image: require('../../assets/mock-product/product-16-banner.png'),
 	},
 	{
 		name: 'Enhance Your Music Experience',
-		image: require('../../../assets/mock-product/product-17-banner.png'),
+		image: require('../../assets/mock-product/product-17-banner.png'),
 	},
 	{
 		name: 'Smart Digital Watch',
-		image: require('../../../assets/mock-product/product-18-banner.png'),
+		image: require('../../assets/mock-product/product-18-banner.png'),
 	},
 ]
 

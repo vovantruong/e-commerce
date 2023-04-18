@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
 
-const Breadcrumb = ({ category, manufactory, product }) => {
+const Breadcrumb = ({ category, manufactory, product, redirect }) => {
     return (
         <ul className={cx('breadcrumb')}>
             <li className={cx('breadcrumb-item')}>
@@ -14,21 +14,21 @@ const Breadcrumb = ({ category, manufactory, product }) => {
             {
                 category && (
                     <li className={cx('breadcrumb-item')}>
-                        <Link to={`/products?tag=${category.toLowerCase()}`}>{category}</Link>
+                        <Link to={redirect ? `/products?tag=${category.toLowerCase()}` : ''}>{category}</Link>
                     </li>
                 )
             }
             {
                 manufactory && (
                     <li className={cx('breadcrumb-item')}>
-                        <Link to={`/products?tag=${manufactory.toLowerCase()}`}>{manufactory}</Link>
+                        <Link to={redirect ? `/products?tag=${manufactory.toLowerCase()}` : ''}>{manufactory}</Link>
                     </li>
                 )
             }
             {
                 product && (
                     <li className={cx('breadcrumb-item')}>
-                        <Link to={`/products?tag=${product.toLowerCase()}`}>{product}</Link>
+                        <Link to={redirect ? `/products?tag=${product.toLowerCase()}` : ''}>{product}</Link>
                     </li>
                 )
             }
