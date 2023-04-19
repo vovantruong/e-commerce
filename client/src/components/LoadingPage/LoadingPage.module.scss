@@ -1,0 +1,45 @@
+.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: transparent;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+}
+
+.logo {
+	width: 200px;
+	height: auto;
+}
+
+.loader {
+	svg {
+		font-size: 40px;
+		color: var(--color-primary);
+	}
+
+	animation: loader 0.7s infinite ease-in-out;
+}
+
+@keyframes loader {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+.text {
+	font-size: 22px;
+	font-weight: 400;
+	color: var(--color-heading);
+	padding-left: 10px;
+}

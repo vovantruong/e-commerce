@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Home.module.scss'
 
-import Banner from '../../components/Banner/Banner'
-import BestSellers from './BestSellers/BestSellers'
-import NewFeature from './NewFeature/NewFeature'
-import Categories from './Categories/Categories'
-import Countdown from './Countdown/Countdown'
-import FLashDeals from './FLashDeals/FLashDeals'
-import Poster from './Poster/Poster'
-import Newletter from './Newletter/Newletter'
-import ExploreProduct from './ExploreProduct/ExploreProduct'
-import Feedback from './Feedback/Feedback'
-import WhyChose from './WhyChose/WhyChose'
+const Banner = lazy(() => import('../../components/Banner/Banner'))
+const BestSellers = lazy(() => import('./BestSellers/BestSellers'))
+const NewFeature = lazy(() => import('./NewFeature/NewFeature'))
+const Categories = lazy(() => import('./Categories/Categories'))
+const Countdown = lazy(() => import('./Countdown/Countdown'))
+const FLashDeals = lazy(() => import('./FLashDeals/FLashDeals'))
+const Poster = lazy(() => import('./Poster/Poster'))
+const Newletter = lazy(() => import('./Newletter/Newletter'))
+const ExploreProduct = lazy(() => import('./ExploreProduct/ExploreProduct'))
+const Feedback = lazy(() => import('./Feedback/Feedback'))
+const WhyChose = lazy(() => import('./WhyChose/WhyChose'))
 
 const cx = classNames.bind(styles)
 

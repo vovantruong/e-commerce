@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import { MediaQueryProvider } from './context/MediaQueryContext'
@@ -15,17 +15,20 @@ import 'swiper/css/free-mode'
 
 import 'react-toastify/dist/ReactToastify.css'
 import GlobalStyle from './styles/GlobalStyle'
+import LoadingPage from './components/LoadingPage/LoadingPage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
 	<React.StrictMode>
-		<Provider store={store}>
-			<MediaQueryProvider>
-				<GlobalStyle>
-					<App />
-				</GlobalStyle>
-			</MediaQueryProvider>
-		</Provider>
+		<Suspense fallback={<LoadingPage />}>
+			<Provider store={store}>
+				<MediaQueryProvider>
+					<GlobalStyle>
+						<App />
+					</GlobalStyle>
+				</MediaQueryProvider>
+			</Provider>
+		</Suspense>
 	</React.StrictMode>
 )
 

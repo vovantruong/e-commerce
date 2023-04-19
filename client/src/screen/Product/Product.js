@@ -17,7 +17,7 @@ const Product = () => {
         <div className={cx('')}>
             <Breadcrumb category="All product" redirect={false} />
             <Banner />
-            Product - {tagProduct ?? cateProduct ?? 'All product'}
+            Product - {tagProduct ?? cateProduct}
         </div>
     )
 }
