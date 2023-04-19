@@ -6,7 +6,6 @@ export const configRoutes = {
     register: "/register",
     forgotpassword: "/forgotpassword",
     products: '/products',
-    // productDetail: '/product-details/:id',
     productDetail: '/:category/:id',
     contact: '/contact',
     blog: '/blog',
@@ -14,4 +13,5 @@ export const configRoutes = {
     wishlist: '/wishlists',
     cart: '/cart',
     account: '/account',
+    notFound: "*"
 }

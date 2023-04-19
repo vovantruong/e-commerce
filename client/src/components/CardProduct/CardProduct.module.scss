@@ -1,5 +1,94 @@
 @import '../../styles/app.scss';
 
+.pd-price {
+	span {
+		font-size: 16px;
+		margin-right: 8px;
+		font-weight: 700;
+		color: var(--color-heading);
+
+		@include mobile {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+
+	.current {
+		color: var(--color-pinterest);
+	}
+
+	.old {
+		color: #d6d6d6;
+		text-decoration: line-through;
+	}
+}
+
+.card-content {
+	margin-top: 25px;
+	position: relative;
+	margin-bottom: 30px;
+	text-align: center;
+
+	.pd-title {
+		font-size: 16px;
+		font-weight: 600;
+		margin-bottom: 10px;
+
+		a {
+			transition: all 0.3s;
+			color: var(--color-heading);
+
+			&:hover {
+				color: var(--color-primary);
+			}
+		}
+	}
+}
+
+.card-action {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px 0;
+
+	li {
+		margin: 5px;
+
+		a {
+			height: 40px;
+			line-height: 42px;
+			border-radius: 4px;
+			text-align: center;
+			transition: all 0.3s;
+			font-size: 14px;
+			box-shadow: 0 16px 32px 0 rgb(0 0 0 / 6%);
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	.wishlist > a {
+		width: 40px;
+		@include button-style(#fff, var(--color-heading));
+	}
+
+	.add-to-cart > button {
+		height: 40px;
+		padding: 0 18px;
+		font-weight: 700;
+		@include button-style(var(--color-secondary), #fff);
+
+		@include mobile {
+			padding: 0 30px;
+		}
+	}
+
+	.quick-view > a {
+		width: 40px;
+		@include button-style(#fff, var(--color-heading));
+	}
+}
+
 .pd-card.type__1 {
 	position: relative;
 	width: 25%;
@@ -85,6 +174,7 @@
 	}
 
 	.pd-title {
+		// text-align: left;
 		display: block;
 		font-size: 20px;
 		color: var(--color-heading);
@@ -224,93 +314,61 @@
 			margin-top: 20px;
 		}
 	}
+}
 
-	.card-action {
+.pd-card.type__3 {
+	padding: 10px 0;
+	&:hover {
+		.thumbnail-img > img {
+			transform: scale(1.1);
+
+			@include mobile {
+				transform: unset;
+			}
+		}
+	}
+
+	.thumbnail {
+		position: relative;
+		display: block;
+	}
+
+	.thumbnail-img {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin: -5px;
-
-		li {
-			margin: 5px;
-
-			a,
-			button {
-				height: 40px;
-				line-height: 42px;
-				border-radius: 4px;
-				text-align: center;
-				transition: all 0.3s;
-				font-size: 14px;
-				box-shadow: 0 16px 32px 0 rgb(0 0 0 / 6%);
-				position: relative;
-				z-index: 1;
-			}
-		}
-
-		.wishlist > a {
-			width: 40px;
-			@include button-style(#fff, var(--color-heading));
-		}
-
-		.add-to-cart > button {
-			padding: 0 18px;
-			font-weight: 700;
-			@include button-style(var(--color-secondary), #fff);
-
-			@include mobile {
-				padding: 0 30px;
-			}
-		}
-
-		.quick-view > a {
-			width: 40px;
-			@include button-style(#fff, var(--color-heading));
-		}
-	}
-
-	.card-content {
-		margin-top: 25px;
+		width: 276px;
+		height: 276px;
+		overflow: hidden;
 		position: relative;
-		margin-bottom: 30px;
-		text-align: center;
+		border-radius: 50%;
+		background-color: #f6f7fb;
+		margin: 0 auto;
 
-		.pd-title {
-			font-size: 16px;
-			font-weight: 500;
-			margin-bottom: 10px;
+		img {
+			border-radius: 6px;
+			max-width: 55%;
+			transition: 0.3s;
+		}
 
-			a {
-				transition: all 0.3s;
-				color: var(--color-heading);
-
-				&:hover {
-					color: var(--color-primary);
-				}
-			}
+		@include tablet {
+			width: 245px;
+			height: 245px;
 		}
 	}
-}
 
-.pd-price {
-	span {
-		font-size: 16px;
-		margin-right: 8px;
+	.thumbnail-badget {
+		position: absolute;
+		top: 20px;
+		right: 10px;
+		z-index: 2;
+		background-color: var(--color-secondary);
+		line-height: 1;
+		padding: 6px 10px 5px;
+		font-size: 12px;
 		font-weight: 700;
-		color: var(--color-heading);
-
-		@include mobile {
-			font-size: 12px;
-			line-height: 16px;
-		}
-	}
-
-	.current {
-		color: var(--color-pinterest);
-	}
-
-	.old {
-		color: #d6d6d6;
-		text-decoration: line-through;
+		color: #fff;
+		border-radius: 4px;
+		box-shadow: 0 8px 16px 0 rgb(53 119 240 / 30%);
 	}
 }

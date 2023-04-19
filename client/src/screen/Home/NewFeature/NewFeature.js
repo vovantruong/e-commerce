@@ -8,6 +8,7 @@ import { dataAllProduct } from '~/constant/dataAllProduct'
 import { Link } from 'react-router-dom'
 import { FiHeart } from 'react-icons/fi'
 import { ImEye } from 'react-icons/im'
+import CardProduct from '~/components/CardProduct/CardProduct'
 
 const cx = classNames.bind(styles)
 
@@ -60,49 +61,13 @@ const NewFeature = () => {
 								},
 							}}
 						>
-							{dataAllProduct.map((item, i) => (
-								<SwiperSlide key={i}>
-									<div className={cx('product-item')}>
-										<div className={cx('thumbnail')}>
-											<Link to={`/${item.product_category}/${item.product_slug}`} className={cx('thumbnail-img')}>
-												<img src={item.product_img} alt="..." />
-											</Link>
-											{item.product_sale_off && item.product_sale_off !== '0' && (
-												<div className={cx('thumbnail-badget')}>
-													{item.product_sale_off}% OFF
-												</div>
-											)}
-										</div>
-										<div className={cx('content')}>
-											<h4 className={cx('title')}>
-												<Link to={`/${item.product_category}/${item.product_slug}`}>{item.product_name}</Link>
-											</h4>
-											<div className={cx('price-variant')}>
-												<span className={cx('current-price')}>${item.product_price}</span>
-												{item.product_old_price && item.product_old_price !== '0' && (
-													<span className={cx('old-price')}>${item.product_old_price}</span>
-												)}
-											</div>
-
-											<ul className={cx('card-action')}>
-												<li className={cx('wishlist')}>
-													<Link to="#">
-														<FiHeart />
-													</Link>
-												</li>
-												<li className={cx('add-to-cart')}>
-													<Link to="">Add to cart</Link>
-												</li>
-												<li className={cx('quick-view')}>
-													<Link to="">
-														<ImEye />
-													</Link>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</SwiperSlide>
-							))}
+							{
+								dataAllProduct.map((item, key) => (
+									<SwiperSlide key={key}>
+										<CardProduct data={item} type={3} />
+									</SwiperSlide>
+								))
+							}
 						</Swiper>
 					</div>
 				</div>

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Product.module.scss'
 import { useLocation } from 'react-router-dom'
-import Banner from '~/components/Banner/Banner'
-import Breadcrumb from '~/components/Breadcrumb/Breadcrumb'
+
+const Banner = lazy(() => import('~/components/Banner/Banner'))
+const Breadcrumb = lazy(() => import('~/components/Breadcrumb/Breadcrumb'))
 
 
 const cx = classNames.bind(styles)

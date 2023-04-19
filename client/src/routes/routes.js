@@ -13,6 +13,7 @@ import ProductDetail from '~/screen/ProductDetail/ProductDetail'
 import WishList from '~/screen/WishList/WishList'
 import Cart from '~/screen/Cart/Cart'
 import MyAccount from '~/screen/MyAccount/MyAccount'
+import NotFound from '~/screen/NotFound/NotFound'
 
 const customerRoutes = [
 	{ key: "login", path: configRoutes.login, components: Login },
@@ -25,6 +26,7 @@ const customerRoutes = [
 	{ key: "about", path: configRoutes.about, components: AboutUs, layout: DefaultLayout },
 	{ key: "wishlist", path: configRoutes.wishlist, components: WishList, layout: DefaultLayout },
 	{ key: "cart", path: configRoutes.cart, components: Cart, layout: DefaultLayout },
+	{ key: "notFound", path: configRoutes.notFound, components: NotFound, layout: DefaultLayout },
 	{ key: "account", path: configRoutes.account, components: MyAccount, layout: DefaultLayout, protected: true },
 ]
 
