@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }) => {
 
   const { pathname } = useLocation();
 
-  return token ? children : <Navigate to={`/login?redirect=${pathname}`} replace/>;
+  return token ? children : <Navigate to={`/login?redirect=${pathname.split('/').filter(Boolean)[0]}`} replace />;
 };
 
 export default ProtectedRoute;

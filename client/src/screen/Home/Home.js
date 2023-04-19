@@ -1,6 +1,7 @@
-import React, { lazy } from 'react'
+import React, { lazy, useEffect } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Home.module.scss'
+import { useLocation } from 'react-router-dom'
 
 const Banner = lazy(() => import('../../components/Banner/Banner'))
 const BestSellers = lazy(() => import('./BestSellers/BestSellers'))
@@ -17,6 +18,11 @@ const WhyChose = lazy(() => import('./WhyChose/WhyChose'))
 const cx = classNames.bind(styles)
 
 const Home = () => {
+
+	const { pathname } = useLocation()
+	useEffect(() => {
+		document.title = 'Tshop | Online Solution'
+	}, [pathname])
 
 	const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000
 	const ONE_DAYS_IN_MS = 1 * 24 * 60 * 60 * 1000

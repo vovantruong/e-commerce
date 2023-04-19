@@ -17,7 +17,13 @@ const ProductDetail = () => {
 	const { pathname } = useLocation();
 	const keyParam = pathname.split('/').filter(Boolean)
 	const cateProduct = keyParam[0];
-	const idProduct = keyParam[1];
+	const slugProduct = keyParam[1];
+
+	useEffect(() => {
+		const newStr = slugProduct.split("-").join(" ")
+		document.title = `${newStr.charAt(0).toUpperCase() + newStr.slice(1)} - Tshop | Online Solution`
+	}, [pathname])
+
 
 	useLayoutEffect(() => {
 		window.scrollTo(0, 0);

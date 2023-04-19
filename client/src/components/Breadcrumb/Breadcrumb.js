@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
 
-const Breadcrumb = ({ category, manufactory, product, redirect }) => {
+const Breadcrumb = ({ category, manufactory, product, redirect = true }) => {
+
     return (
         <div className='container'>
             <ul className={cx('breadcrumb')}>
