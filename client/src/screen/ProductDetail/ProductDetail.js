@@ -1,12 +1,13 @@
-import React, { useLayoutEffect, useContext, useState, useEffect } from 'react'
+import React, { useLayoutEffect, useContext, useState, useEffect, lazy } from 'react'
 import classNames from 'classnames/bind'
 import styles from './ProductDetail.module.scss'
 import { MediaQueryContext } from '~/context/MediaQueryContext'
-import InfoProduct from './InfoProduct/InfoProduct'
-import Thumbnail from './Thumbnail/Thumbnail'
 import { useLocation } from 'react-router-dom'
-import Breadcrumb from '~/components/Breadcrumb/Breadcrumb'
 import { FaStar } from 'react-icons/fa'
+
+const InfoProduct = lazy(() => import('./InfoProduct/InfoProduct'))
+const Thumbnail = lazy(() => import('./Thumbnail/Thumbnail'))
+const Breadcrumb = lazy(() => import('~/components/Breadcrumb/Breadcrumb'))
 
 
 const cx = classNames.bind(styles)

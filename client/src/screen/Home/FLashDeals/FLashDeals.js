@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { dataAllProduct } from '~/constant/dataAllProduct'
 import { Link } from 'react-router-dom'
 import ShowCountdown from '~/components/ShowCountdown/ShowCountdown'
+import CardProduct from '~/components/CardProduct/CardProduct'
 
 const cx = classNames.bind(styles)
 
@@ -67,7 +68,7 @@ const FLashDeals = ({ targetDate }) => {
 							},
 						}}
 					>
-						{dataAllProduct.map((item, i) => (
+						{/* {dataAllProduct.map((item, i) => (
 							<SwiperSlide key={i}>
 								<div className={cx('product-item')}>
 									<div className={cx('thumbnail')}>
@@ -108,7 +109,14 @@ const FLashDeals = ({ targetDate }) => {
 									</div>
 								</div>
 							</SwiperSlide>
-						))}
+						))} */}
+						{
+							dataAllProduct.map((item, i) => (
+								<SwiperSlide key={i}>
+									<CardProduct data={item} type={2} />
+								</SwiperSlide>
+							))
+						}
 					</Swiper>
 				</div>
 			</div>

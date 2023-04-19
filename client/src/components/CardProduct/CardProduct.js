@@ -4,6 +4,8 @@ import styles from './CardProduct.module.scss'
 import { BsCart2 } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { FaStar } from 'react-icons/fa'
+import { FiHeart } from 'react-icons/fi'
+import { ImEye } from 'react-icons/im'
 
 const cx = classNames.bind(styles)
 
@@ -13,9 +15,9 @@ const CardProduct = ({ data, type = 1 }) => {
     function renderCardType1() {
         return (
             <div className={cx('pd-card', 'type__1')}>
-                <Link to={`/${data.product_category}/${data.product_slug}`} className={cx('btn-add-cart')}>
+                <button className={cx('btn-add-cart')}>
                     <BsCart2 />
-                </Link>
+                </button>
                 <Link to={`/${data.product_category}/${data.product_slug}`} className={cx('card-content')}>
                     <div className={cx('card-info')}>
                         <div className={cx('pd-title')}>
@@ -49,7 +51,46 @@ const CardProduct = ({ data, type = 1 }) => {
     }
 
     function renderCardType2() {
-        return <div>2</div>
+        return <div className={cx('pd-card', 'type__2')}>
+            <div className={cx('pd-thumbnail')}>
+                <Link to={`/${data.product_category}/${data.product_slug}`} className={cx('thumbnail-img')}>
+                    <img src={data.product_img} alt="..." />
+                </Link>
+                {data.product_sale_off && data.product_sale_off !== '0' && (
+                    <div className={cx('thumbnail-badget')}>{data.product_sale_off}% OFF</div>
+                )}
+                <div className={cx('hover-action')}>
+                    <ul className={cx('card-action')}>
+                        <li className={cx('wishlist')}>
+                            <Link to="#">
+                                <FiHeart />
+                            </Link>
+                        </li>
+                        <li className={cx('add-to-cart')}>
+                            <button>Add to cart</button>
+                        </li>
+                        <li className={cx('quick-view')}>
+                            <Link to="#">
+                                <ImEye />
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className={cx('card-content')}>
+                <h4 className={cx('pd-title')}>
+                    <Link to={`/${data.product_category}/${data.product_slug}`}>{data.product_name}</Link>
+                </h4>
+                <div className={cx('pd-price')}>
+                    <span className={cx('current')}>${data.product_price}</span>
+                    {data.product_old_price && data.product_old_price !== '0' && (
+                        <span className={cx('price', 'old')}>
+                            ${data.product_old_price}
+                        </span>
+                    )}
+                </div>
+            </div>
+        </div>
     }
 
     function renderCardType3() {
@@ -68,19 +109,14 @@ const CardProduct = ({ data, type = 1 }) => {
         switch (type) {
             case 1:
                 return renderCardType1();
-                break;
             case 2:
                 return renderCardType2();
-                break;
             case 3:
                 return renderCardType3();
-                break;
             case 4:
                 return renderCardType4();
-                break;
             default:
                 return renderCardTypeNull()
-                break
         }
     }
 
