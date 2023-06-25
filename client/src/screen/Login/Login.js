@@ -91,14 +91,16 @@ const Login = () => {
 							</Alert>
 						)}
 						<div className={cx('form-group', { 'valid-error-check': errors.email })}>
-							<input id="email" className={cx('form-control')} {...register('email')} autoFocus />
 							<label htmlFor="email">Email</label>
+							<input id="email" className={cx('form-control')} {...register('email')} autoFocus />
 							{errors.email && <span className={cx('valid-error-message')}>{errors.email.message}</span>}
 						</div>
 						<div className={cx('form-group', { 'valid-error-check': errors.password })}>
-							<input id="pass" type={visible ? "text" : "password"} className={cx('form-control')} {...register('password')} />
 							<label htmlFor="pass">Password</label>
-							<button type='button' className={cx('eye-icon')} onClick={() => setVisible(!visible)}>{visible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}</button>
+							<div className={cx('form-input')}>
+								<input id="pass" type={visible ? "text" : "password"} className={cx('form-control')} {...register('password')} />
+								<button type='button' className={cx('eye-icon')} onClick={() => setVisible(!visible)}>{visible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}</button>
+							</div>
 							{errors.password && (
 								<span className={cx('valid-error-message')}>{errors.password.message}</span>
 							)}

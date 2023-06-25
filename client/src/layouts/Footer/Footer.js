@@ -60,7 +60,7 @@ const Footer = () => {
 			<div className={cx('copyright-area')}>
 				<div className="container">
 					<div className={cx('wrap-copyright')}>
-						<div className={cx('copyright-box', 'social-media')}>
+						<div className={cx('social-media')}>
 							<a href="#">
 								<FaFacebookF />
 							</a>
@@ -78,10 +78,10 @@ const Footer = () => {
 							</a>
 						</div>
 						<div className={cx('copyright-box', 'descritpions')}>
-							© 2022. All rights reserved by Axilthemes.
+							© 2022 ~ 2023 - Product belongs to coder Gavin Dev, idea from theme Axilthemes.
 						</div>
-						<div className={cx('copyright-box', 'accept-for')}>
-							<span>Accept For</span>
+						<div className={cx('accept-for')}>
+							<span>Accept For: </span>
 							<ul>
 								<li>
 									<img src={require('../../assets/footer/icon-paypal.png')} alt="..." />
@@ -121,7 +121,7 @@ const Footer = () => {
 								<li>
 									<p>
 										<FiPhone />
-										<span>(+01) 850-315-5862</span>
+										<span>(+84) 000-000-000</span>
 									</p>
 								</li>
 							</ul>

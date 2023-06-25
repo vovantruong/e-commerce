@@ -15,12 +15,14 @@ import { actionRegisterCustomer } from '~/app/customerRedux/userAction'
 import CircularProgress from '@mui/material/CircularProgress'
 import Alert from '@mui/material/Alert'
 import { clearError } from '~/app/customerRedux/userSlice'
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 
 const cx = classNames.bind(styles)
 
 const Register = () => {
 	const isBreakPoint = useContext(MediaQueryContext)
-	const [visible, setVisible] = useState(false)
+	const [visiblePass, setVisiblePass] = useState(false)
+	const [visibleRePass, setVisibleRePass] = useState(false)
 
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
@@ -116,52 +118,58 @@ const Register = () => {
 						)}
 						<div className={cx('form-wrap')}>
 							<div className={cx('form-group', { 'valid-error-check': errors.firstname })}>
+								<label htmlFor="firstname">First Name *</label>
 								<input
 									id="firstname"
 									className={cx('form-control')}
 									{...register('firstname')}
 									autoFocus
 								/>
-								<label htmlFor="firstname">First Name *</label>
 								{errors.firstname && (
 									<span className={cx('valid-error-message')}>{errors.firstname.message}</span>
 								)}
 							</div>
 							<div className={cx('form-group', { 'valid-error-check': errors.lastname })}>
-								<input id="lastname" className={cx('form-control')} {...register('lastname')} />
 								<label htmlFor="lastname">Last Name *</label>
+								<input id="lastname" className={cx('form-control')} {...register('lastname')} />
 								{errors.lastname && (
 									<span className={cx('valid-error-message')}>{errors.lastname.message}</span>
 								)}
 							</div>
 						</div>
 						<div className={cx('form-group', { 'valid-error-check': errors.email })}>
-							<input id="email" className={cx('form-control')} {...register('email')} />
 							<label htmlFor="email">Email *</label>
+							<input id="email" className={cx('form-control')} {...register('email')} />
 							{errors.email && <span className={cx('valid-error-message')}>{errors.email.message}</span>}
 						</div>
 						<div className={cx('form-group', { 'valid-error-check': errors.phone })}>
-							<input id="phone" type="number" className={cx('form-control')} {...register('phone')} />
 							<label htmlFor="phone">Phone *</label>
+							<input id="phone" type="number" className={cx('form-control')} {...register('phone')} />
 							{errors.phone && <span className={cx('valid-error-message')}>{errors.phone.message}</span>}
 						</div>
 						<div className={cx('form-group', { 'valid-error-check': errors.address })}>
-							<input id="address" type="text" className={cx('form-control')} {...register('address')} />
 							<label htmlFor="address">Address *</label>
+							<input id="address" type="text" className={cx('form-control')} {...register('address')} />
 							{errors.address && (
 								<span className={cx('valid-error-message')}>{errors.address.message}</span>
 							)}
 						</div>
 						<div className={cx('form-group', { 'valid-error-check': errors.password })}>
-							<input id="pass" type="password" className="form-control" {...register('password')} />
 							<label htmlFor="pass">Password *</label>
+							<div className={cx('form-input')}>
+								<input id="pass" type={visiblePass ? "text" : "password"} className="form-control" {...register('password')} />
+								<button type='button' className={cx('eye-icon')} onClick={() => setVisiblePass(!visiblePass)}>{visiblePass ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}</button>
+							</div>
 							{errors.password && (
 								<span className={cx('valid-error-message')}>{errors.password.message}</span>
 							)}
 						</div>
 						<div className={cx('form-group', { 'valid-error-check': errors.confirm })}>
-							<input id="confirm" type="password" className="form-control" {...register('confirm')} />
 							<label htmlFor="confirm">Confirm Password *</label>
+							<div className={cx('form-input')}>
+								<input id="confirm" type={visibleRePass ? "text" : "password"} className="form-control" {...register('confirm')} />
+								<button type='button' className={cx('eye-icon')} onClick={() => setVisibleRePass(!visibleRePass)}>{visibleRePass ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}</button>
+							</div>
 							{errors.confirm && (
 								<span className={cx('valid-error-message')}>{errors.confirm.message}</span>
 							)}

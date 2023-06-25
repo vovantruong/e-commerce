@@ -212,7 +212,12 @@
 		top: 50%;
 		transform: translate(0, -50%);
 		font-size: 18px;
+		color: #afafaf;
 	}
+}
+
+.form-input {
+	position: relative;
 }
 
 .form-btn {
